@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteUrl } from "@/lib/site";
 
 export default function HomePage() {
   return (
@@ -89,7 +90,7 @@ export default function HomePage() {
               Browse a community repo
             </p>
             <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-              https://turtles.tips/community/starkus-quarry
+              {siteUrl}/community/starkus-quarry
             </pre>
           </div>
           <div>
@@ -97,7 +98,7 @@ export default function HomePage() {
               Download a file with wget
             </p>
             <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-              wget https://turtles.tips/raw/community/starkus-quarry/quarry.lua
+              wget {siteUrl}/raw/community/starkus-quarry/quarry.lua
             </pre>
           </div>
           <div>
@@ -105,7 +106,7 @@ export default function HomePage() {
               Or with curl
             </p>
             <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-              curl -O https://turtles.tips/raw/community/starkus-quarry/quarry.lua
+              curl -O {siteUrl}/raw/community/starkus-quarry/quarry.lua
             </pre>
           </div>
         </div>

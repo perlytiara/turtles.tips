@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Nav } from "@/components/Nav";
 import Link from "next/link";
+import { siteBasePath } from "@/lib/site";
 
-const basePath = process.env.BASE_PATH || "/turtles.tips";
-const iconHref = basePath ? `${basePath}/icon.svg` : "/icon.svg";
+const iconHref = siteBasePath ? `${siteBasePath}/icon.svg` : "/icon.svg";
 
 export const metadata: Metadata = {
   title: "turtles.tips — Turtles, computers, peripherals & network",

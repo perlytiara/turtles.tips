@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { DirEntry } from "@/lib/files";
 import { formatSize } from "@/lib/files";
+import { siteBasePath, siteUrl } from "@/lib/site";
 
 interface BreadcrumbSegment {
   label: string;
@@ -78,6 +79,7 @@ export function FileBrowser({
               {entries.map((entry) => {
                 const href = `${basePath}/${entry.name}`;
                 const rawHref = `${rawBase}/${entry.name}`;
+                const fullRawHref = siteBasePath ? `${siteBasePath}${rawHref}` : rawHref;
                 return (
                   <tr
                     key={entry.name}
@@ -105,9 +107,9 @@ export function FileBrowser({
                     <td className="p-3 text-right hidden sm:table-cell">
                       {!entry.isDir && (
                         <a
-                          href={rawHref}
+                          href={fullRawHref}
                           className="text-xs font-mono px-2 py-1 rounded bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] hover:text-[var(--turtle-lime)] hover:border-[var(--turtle-green)]"
-                          title={`wget https://turtles.tips${rawHref}`}
+                          title={`wget ${siteUrl}${rawHref}`}
                         >
                           raw
                         </a>
@@ -126,7 +128,7 @@ export function FileBrowser({
           Download with wget or curl
         </p>
         <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--muted)]">
-          {`wget https://turtles.tips${rawBase}/<file>\ncurl -O https://turtles.tips${rawBase}/<file>`}
+          {`wget ${siteUrl}${rawBase}/<file>\ncurl -O ${siteUrl}${rawBase}/<file>`}
         </pre>
       </div>
     </div>

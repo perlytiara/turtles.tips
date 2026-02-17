@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteBasePath, siteUrl } from "@/lib/site";
 
 interface BreadcrumbSegment {
   label: string;
@@ -54,7 +55,7 @@ export function FileViewer({
             </span>
           </div>
           <a
-            href={rawUrl}
+            href={siteBasePath ? `${siteBasePath}${rawUrl}` : rawUrl}
             className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-[var(--turtle-green)] text-white hover:bg-[var(--turtle-lime)] transition-colors"
           >
             Raw
@@ -83,10 +84,10 @@ export function FileViewer({
           Download this file
         </p>
         <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-          {`wget https://turtles.tips${rawUrl}`}
+          {`wget ${siteUrl}${rawUrl}`}
         </pre>
         <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-          {`curl -O https://turtles.tips${rawUrl}`}
+          {`curl -O ${siteUrl}${rawUrl}`}
         </pre>
       </div>
     </div>

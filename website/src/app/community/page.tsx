@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { communityRepos } from "@/data/community";
+import { siteUrl } from "@/lib/site";
 
 export default function CommunityPage() {
   return (
@@ -50,8 +51,7 @@ export default function CommunityPage() {
           Download any file directly
         </p>
         <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-{`wget https://turtles.tips/raw/community/<repo>/<file>
-curl -O https://turtles.tips/raw/community/<repo>/<file>`}
+          {`wget ${siteUrl}/raw/community/<repo>/<file>\ncurl -O ${siteUrl}/raw/community/<repo>/<file>`}
         </pre>
       </div>
     </div>
