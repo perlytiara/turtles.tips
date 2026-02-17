@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { DirEntry } from "@/lib/files";
 import { formatSize } from "@/lib/files";
 import { siteBasePath, siteUrl } from "@/lib/site";
+import { CopyCommand } from "./CopyCommand";
 
 interface BreadcrumbSegment {
   label: string;
@@ -25,6 +26,9 @@ export function FileBrowser({
   title,
   description,
 }: FileBrowserProps) {
+  const wgetExample = `wget ${siteUrl}${rawBase}/<file>`;
+  const curlExample = `curl -O ${siteUrl}${rawBase}/<file>`;
+
   return (
     <div className="space-y-6">
       <div>
@@ -34,6 +38,22 @@ export function FileBrowser({
         {description && <p className="text-[var(--muted)]">{description}</p>}
       </div>
 
+      {/* Top: Copy commands */}
+      <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)] mb-3">
+          Download any file
+        </p>
+        <div className="space-y-2">
+          <CopyCommand command={wgetExample} />
+          <CopyCommand command={curlExample} />
+        </div>
+        <p className="text-xs text-[var(--muted)] mt-3">
+          Replace <code className="text-[var(--text)]">&lt;file&gt;</code> with
+          the path from the table below.
+        </p>
+      </div>
+
+      {/* Breadcrumb */}
       <nav className="flex items-center gap-1 text-sm font-mono overflow-x-auto pb-1">
         {breadcrumbs.map((crumb, i) => (
           <span key={crumb.href} className="flex items-center gap-1 shrink-0">
@@ -52,6 +72,7 @@ export function FileBrowser({
         ))}
       </nav>
 
+      {/* File table */}
       <section className="rounded-[var(--radius)] border border-[var(--border)] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
@@ -79,7 +100,8 @@ export function FileBrowser({
               {entries.map((entry) => {
                 const href = `${basePath}/${entry.name}`;
                 const rawHref = `${rawBase}/${entry.name}`;
-                const fullRawHref = siteBasePath ? `${siteBasePath}${rawHref}` : rawHref;
+                const fullRawHref =
+                  siteBasePath ? `${siteBasePath}${rawHref}` : rawHref;
                 return (
                   <tr
                     key={entry.name}
@@ -122,15 +144,6 @@ export function FileBrowser({
           </table>
         </div>
       </section>
-
-      <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4">
-        <p className="text-xs text-[var(--muted)] mb-2 font-semibold uppercase tracking-wider">
-          Download with wget or curl
-        </p>
-        <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--muted)]">
-          {`wget ${siteUrl}${rawBase}/<file>\ncurl -O ${siteUrl}${rawBase}/<file>`}
-        </pre>
-      </div>
     </div>
   );
 }

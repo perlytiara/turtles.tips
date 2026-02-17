@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.BASE_PATH || "/turtles.tips";
+// BASE_PATH set only in GitHub Actions (deploy); local dev uses root /
+const basePath = process.env.BASE_PATH ?? "";
 
 const nextConfig = {
   output: "export",

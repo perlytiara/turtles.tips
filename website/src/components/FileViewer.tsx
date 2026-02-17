@@ -1,5 +1,10 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { siteBasePath, siteUrl } from "@/lib/site";
+import { CopyCommand } from "./CopyCommand";
+import { extractLuaMetadata } from "@/lib/metadata";
 
 interface BreadcrumbSegment {
   label: string;
@@ -23,9 +28,30 @@ export function FileViewer({
 }: FileViewerProps) {
   const lines = content.split("\n");
   const lineCount = lines.length;
+  const meta = extractLuaMetadata(content);
+  const fullRawUrl = `${siteUrl}${rawUrl}`;
+  const wgetCmd = `wget ${fullRawUrl}`;
+  const curlCmd = `curl -O ${fullRawUrl}`;
+
+  const [showScrollDown, setShowScrollDown] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      setShowScrollDown(scrollable > 200 && window.scrollY < scrollable - 100);
+    };
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const scrollToBottom = () => {
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
+  };
 
   return (
     <div className="space-y-6">
+      {/* Breadcrumb */}
       <nav className="flex items-center gap-1 text-sm font-mono overflow-x-auto pb-1">
         {breadcrumbs.map((crumb, i) => (
           <span key={crumb.href} className="flex items-center gap-1 shrink-0">
@@ -44,23 +70,48 @@ export function FileViewer({
         ))}
       </nav>
 
-      <div className="rounded-[var(--radius)] border border-[var(--border)] overflow-hidden">
-        <div className="flex items-center justify-between gap-4 px-4 py-3 bg-[var(--surface)] border-b border-[var(--border)]">
-          <div className="flex items-center gap-3 text-sm">
-            <span className="font-mono font-semibold text-[var(--text)]">
-              {filename}
-            </span>
-            <span className="text-[var(--muted)]">
-              {lineCount} lines · {size}
-            </span>
+      {/* Top: Copy commands + metadata */}
+      <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] overflow-hidden">
+        <div className="p-4 sm:p-5 space-y-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="font-mono font-semibold text-[var(--text)] text-lg">
+                {filename}
+              </h2>
+              <p className="text-sm text-[var(--muted)] mt-0.5">
+                {lineCount} lines · {size}
+                {meta.version && ` · ${meta.version}`}
+              </p>
+            </div>
+            <a
+              href={siteBasePath ? `${siteBasePath}${rawUrl}` : rawUrl}
+              className="shrink-0 text-xs font-mono px-3 py-1.5 rounded-lg bg-[var(--turtle-green)] text-white hover:bg-[var(--turtle-lime)] transition-colors"
+            >
+              Open raw
+            </a>
           </div>
-          <a
-            href={siteBasePath ? `${siteBasePath}${rawUrl}` : rawUrl}
-            className="inline-flex items-center gap-1.5 text-xs font-mono px-3 py-1.5 rounded-lg bg-[var(--turtle-green)] text-white hover:bg-[var(--turtle-lime)] transition-colors"
-          >
-            Raw
-          </a>
+
+          {meta.description && (
+            <p className="text-sm text-[var(--muted)]">{meta.description}</p>
+          )}
+          {meta.usage && (
+            <p className="text-xs text-[var(--muted)]">
+              <span className="font-semibold text-[var(--text)]">Usage:</span> {meta.usage}
+            </p>
+          )}
+
+          <div className="space-y-2 pt-2 border-t border-[var(--border)]">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--muted)]">
+              Copy & run
+            </p>
+            <CopyCommand command={wgetCmd} />
+            <CopyCommand command={curlCmd} />
+          </div>
         </div>
+      </div>
+
+      {/* Code block */}
+      <div className="rounded-[var(--radius)] border border-[var(--border)] overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-sm font-mono">
             <tbody>
@@ -79,17 +130,30 @@ export function FileViewer({
         </div>
       </div>
 
-      <div className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 space-y-3">
-        <p className="text-xs text-[var(--muted)] font-semibold uppercase tracking-wider">
-          Download this file
-        </p>
-        <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-          {`wget ${siteUrl}${rawUrl}`}
-        </pre>
-        <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-          {`curl -O ${siteUrl}${rawUrl}`}
-        </pre>
-      </div>
+      {/* Floating scroll-to-bottom button */}
+      {showScrollDown && (
+        <button
+          type="button"
+          onClick={scrollToBottom}
+          className="fixed bottom-6 right-6 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--surface)] border border-[var(--border)] text-[var(--muted)] shadow-lg transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--turtle-lime)] hover:border-[var(--turtle-green)]"
+          title="Scroll to bottom"
+        >
+          <span className="sr-only">Scroll to bottom</span>
+          <svg
+            className="h-5 w-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 14l-7 7m0 0l-7-7m7 7V3"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
