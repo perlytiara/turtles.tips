@@ -1,0 +1,15 @@
+export const communityRepos = [
+  { slug: "awesome-computercraft", name: "awesome-computercraft", source: "tomodachi94/awesome-computercraft" },
+  { slug: "john-turtle-programs", name: "John-Turtle-Programs", source: "johnneijzen/John-Turtle-Programs" },
+  { slug: "equbuxu-mine", name: "mine", source: "Equbuxu/mine" },
+  { slug: "sv443-computercraft-projects", name: "ComputerCraft-Projects", source: "Sv443/ComputerCraft-Projects" },
+  { slug: "kepler155c-opus", name: "opus", source: "kepler155c/opus" },
+  { slug: "louino2478-computercraft-programe", name: "computercraft-programe", source: "louino2478/computercraft-programe" },
+  { slug: "starkus-quarry", name: "quarry", source: "Starkus/quarry" },
+  { slug: "ottomated-turtle-gambit", name: "turtle-gambit", source: "ottomated/turtle-gambit" },
+  { slug: "merlinlikethewizard-mastermine", name: "Mastermine", source: "merlinlikethewizard/Mastermine" },
+  { slug: "yazug-computercraft", name: "computercraft", source: "yazug/computercraft" },
+  { slug: "zephira58-cc-tweaked-scripts", name: "CC-Tweaked-Scripts", source: "Zephira58/CC-Tweaked-Scripts" },
+  { slug: "fatboychummy-cc-dog", name: "Dog", source: "Fatboychummy-CC/Dog" },
+  { slug: "exa-byte-ccturtle-remote-controller", name: "CCTurtleRemoteController", source: "exa-byte/CCTurtleRemoteController" },
+] as const;

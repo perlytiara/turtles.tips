@@ -1,10 +1,31 @@
-export default function ProgramsPage() {
+import Link from "next/link";
+import { listDirectory } from "@/lib/files";
+import { FileBrowser } from "@/components/FileBrowser";
+
+export default async function ProgramsPage() {
+  let entries: Awaited<ReturnType<typeof listDirectory>> = [];
+  try {
+    entries = await listDirectory("programs");
+  } catch {
+    entries = [];
+  }
+
+  const breadcrumbs = [{ label: "Programs", href: "/programs" }];
+
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8">
-      <h1 className="text-2xl font-bold mb-4">Programs</h1>
-      <p className="text-[var(--muted)]">
-        Main repo: <strong>programs/</strong> (CC-Tweaked-TurtsAndComputers). Browse the repo at{" "}
-        <a href="https://github.com/perlytiara/CC-Tweaked-TurtsAndComputers" className="underline">GitHub</a>.
+    <div className="space-y-8">
+      <FileBrowser
+        entries={entries}
+        breadcrumbs={breadcrumbs}
+        basePath="/programs"
+        rawBase="/raw/programs"
+        title="Programs"
+        description="Turtle and computer programs — mining, stairs, farming, utilities. Browse and download directly from TurtlesPAC."
+      />
+
+      <p className="text-sm text-[var(--muted)]">
+        Looking for more?{" "}
+        <Link href="/community">Community repos</Link> have additional programs from other authors.
       </p>
     </div>
   );
