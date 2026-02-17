@@ -1,17 +1,42 @@
 # turtles.tips
 
-Syncs the [TurtlesPAC](https://github.com/perlytiara/TurtlesPAC) archive. One submodule: **archive** (TurtlesPAC). Lean layout: `archive/programs` and `archive/community` at root — no duplicate folder names.
+CC:Tweaked programs and tips. One repo: **TurtlesPAC** (the archive) + **website** + **data** at root.
 
-## Clone
+## Layout
+
+| Path | Purpose |
+|------|---------|
+| **TurtlesPAC/** | Program archive: `programs/` (main repo) + `community/` (other repos) as submodules. See [TurtlesPAC/README.md](TurtlesPAC/README.md). |
+| **website/** | Next.js app: programs browser, credits, docs. |
+| **data/** | JSON for the website (credits, program overview). |
+
+You always see the **TurtlesPAC** folder by name — that’s the archive (programs + community). Website and data live at repo root.
+
+## Clone (with submodules)
 
 ```bash
 git clone --recurse-submodules https://github.com/perlytiara/turtles.tips.git
-cd turtles.tips/archive
+cd turtles.tips
 ```
 
-## Update archive
+If already cloned without submodules:
 
 ```bash
-git submodule update --remote archive
-git add archive && git commit -m "chore: update archive"
+git submodule update --init --recursive
 ```
+
+## Update TurtlesPAC submodules
+
+```bash
+git submodule update --remote TurtlesPAC/programs
+# or all: git submodule update --remote --merge
+git add TurtlesPAC && git commit -m "chore: update TurtlesPAC submodules"
+```
+
+## Run the website
+
+```bash
+cd website && npm install && npm run dev
+```
+
+Open <http://localhost:3000>.
