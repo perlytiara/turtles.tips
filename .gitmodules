@@ -1,0 +1,3 @@
+[submodule "TurtlesPAC"]
+	path = TurtlesPAC
+	url = https://github.com/perlytiara/TurtlesPAC.git

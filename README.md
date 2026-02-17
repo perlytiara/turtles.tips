@@ -25,13 +25,16 @@ If already cloned without submodules:
 git submodule update --init --recursive
 ```
 
-## Update TurtlesPAC submodules
+## Update TurtlesPAC (submodule)
+
+TurtlesPAC is one submodule; inside it, **programs** and **community/** are submodules of TurtlesPAC.
 
 ```bash
-git submodule update --remote TurtlesPAC/programs
-# or all: git submodule update --remote --merge
-git add TurtlesPAC && git commit -m "chore: update TurtlesPAC submodules"
+git submodule update --remote TurtlesPAC
+git add TurtlesPAC && git commit -m "chore: update TurtlesPAC submodule"
 ```
+
+To update programs/community inside TurtlesPAC: `cd TurtlesPAC && git submodule update --remote --merge`
 
 ## Run the website
 
