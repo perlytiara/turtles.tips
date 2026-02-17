@@ -8,6 +8,12 @@ import {
   formatSize,
   walkAllPaths,
 } from "@/lib/files";
+import {
+  encodePathForHref,
+  encodeSegmentsForParams,
+  decodePathFromParams,
+  paramVariantsForExport,
+} from "@/lib/site";
 import { FileBrowser } from "@/components/FileBrowser";
 import { FileViewer } from "@/components/FileViewer";
 
@@ -17,13 +23,18 @@ interface Props {
 
 export async function generateStaticParams() {
   const allPaths = await walkAllPaths("programs");
-  return allPaths.map((segments) => ({
-    path: segments.slice(1),
-  }));
+  const params: { path: string[] }[] = [];
+  for (const segments of allPaths) {
+    const rel = segments.slice(1);
+    for (const path of paramVariantsForExport(rel)) {
+      params.push({ path });
+    }
+  }
+  return params;
 }
 
 export default async function ProgramsBrowsePage({ params }: Props) {
-  const { path: pathSegments } = params;
+  const pathSegments = decodePathFromParams(params.path);
 
   const fullSegments = ["programs", ...pathSegments];
 
@@ -39,17 +50,17 @@ export default async function ProgramsBrowsePage({ params }: Props) {
     const entries = await listDirectory(...fullSegments);
 
     const breadcrumbs = [{ label: "Programs", href: "/programs" }];
-    let href = browseBase;
+    let prevEncoded = "";
     for (const seg of pathSegments) {
-      href += `/${seg}`;
-      breadcrumbs.push({ label: seg, href });
+      prevEncoded = prevEncoded ? `${prevEncoded}/${encodeURIComponent(seg)}` : encodeURIComponent(seg);
+      breadcrumbs.push({ label: seg, href: `${browseBase}/${prevEncoded}/` });
     }
 
     return (
       <FileBrowser
         entries={entries}
         breadcrumbs={breadcrumbs}
-        basePath={`${browseBase}/${subPath}`}
+        basePath={`${browseBase}/${encodePathForHref(pathSegments)}`}
         rawBase={`${rawBase}/${subPath}`}
         title="Programs"
         description="Browse programs from the TurtlesPAC archive."
@@ -62,10 +73,15 @@ export default async function ProgramsBrowsePage({ params }: Props) {
   const filename = fullSegments[fullSegments.length - 1];
 
   const breadcrumbs = [{ label: "Programs", href: "/programs" }];
-  let href = browseBase;
-  for (const seg of pathSegments) {
-    href += `/${seg}`;
-    breadcrumbs.push({ label: seg, href });
+  let prevEncoded = "";
+  for (let i = 0; i < pathSegments.length; i++) {
+    const seg = pathSegments[i];
+    prevEncoded = prevEncoded ? `${prevEncoded}/${encodeURIComponent(seg)}` : encodeURIComponent(seg);
+    const isLast = i === pathSegments.length - 1;
+    breadcrumbs.push({
+      label: seg,
+      href: isLast ? `${browseBase}/${prevEncoded}` : `${browseBase}/${prevEncoded}/`,
+    });
   }
 
   return (

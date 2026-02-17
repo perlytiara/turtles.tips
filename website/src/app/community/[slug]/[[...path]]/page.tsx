@@ -9,6 +9,12 @@ import {
   formatSize,
   walkAllPaths,
 } from "@/lib/files";
+import {
+  encodePathForHref,
+  encodeSegmentsForParams,
+  decodePathFromParams,
+  paramVariantsForExport,
+} from "@/lib/site";
 import { FileBrowser } from "@/components/FileBrowser";
 import { FileViewer } from "@/components/FileViewer";
 
@@ -26,7 +32,9 @@ export async function generateStaticParams() {
     for (const segments of allPaths) {
       const relativePath = segments.slice(2);
       if (relativePath.length > 0) {
-        params.push({ slug: repo.slug, path: relativePath });
+        for (const path of paramVariantsForExport(relativePath)) {
+          params.push({ slug: repo.slug, path });
+        }
       }
     }
   }
@@ -35,7 +43,8 @@ export async function generateStaticParams() {
 }
 
 export default async function CommunityBrowsePage({ params }: Props) {
-  const { slug, path: pathSegments } = params;
+  const slug = params.slug;
+  const pathSegments = params.path ? decodePathFromParams(params.path) : [];
 
   const repo = communityRepos.find((r) => r.slug === slug);
   if (!repo) notFound();
@@ -59,10 +68,10 @@ export default async function CommunityBrowsePage({ params }: Props) {
       { label: repo.name, href: browseBase },
     ];
     if (pathSegments) {
-      let href = browseBase;
+      let prevEncoded = "";
       for (const seg of pathSegments) {
-        href += `/${seg}`;
-        breadcrumbs.push({ label: seg, href });
+        prevEncoded = prevEncoded ? `${prevEncoded}/${encodeURIComponent(seg)}` : encodeURIComponent(seg);
+        breadcrumbs.push({ label: seg, href: `${browseBase}/${prevEncoded}/` });
       }
     }
 
@@ -70,7 +79,7 @@ export default async function CommunityBrowsePage({ params }: Props) {
       <FileBrowser
         entries={entries}
         breadcrumbs={breadcrumbs}
-        basePath={subPath ? `${browseBase}/${subPath}` : browseBase}
+        basePath={subPath ? `${browseBase}/${encodePathForHref(pathSegments)}` : browseBase}
         rawBase={subPath ? `${rawBase}/${subPath}` : rawBase}
         title={repo.name}
         description={`Community repo by ${repo.source.split("/")[0]} — browse files and download with wget/curl.`}
@@ -87,10 +96,15 @@ export default async function CommunityBrowsePage({ params }: Props) {
     { label: repo.name, href: browseBase },
   ];
   if (pathSegments) {
-    let href = browseBase;
+    let prevEncoded = "";
     for (let i = 0; i < pathSegments.length; i++) {
-      href += `/${pathSegments[i]}`;
-      breadcrumbs.push({ label: pathSegments[i], href });
+      const seg = pathSegments[i];
+      prevEncoded = prevEncoded ? `${prevEncoded}/${encodeURIComponent(seg)}` : encodeURIComponent(seg);
+      const isLast = i === pathSegments.length - 1;
+      breadcrumbs.push({
+        label: seg,
+        href: isLast ? `${browseBase}/${prevEncoded}` : `${browseBase}/${prevEncoded}/`,
+      });
     }
   }
 
