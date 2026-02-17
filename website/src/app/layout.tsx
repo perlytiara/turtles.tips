@@ -3,14 +3,17 @@ import "./globals.css";
 import { Nav } from "@/components/Nav";
 import Link from "next/link";
 
+const basePath = process.env.BASE_PATH || "/turtles.tips";
+const iconHref = basePath ? `${basePath}/icon.svg` : "/icon.svg";
+
 export const metadata: Metadata = {
   title: "turtles.tips — Turtles, computers, peripherals & network",
   description:
     "Tips, programs, and docs for CC:Tweaked: mining turtles, computers, peripherals, and network. Curated archive with full credit to authors.",
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    icon: iconHref,
+    shortcut: iconHref,
+    apple: iconHref,
   },
 };
 
@@ -22,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href={iconHref} type="image/svg+xml" />
       </head>
       <body className="min-h-screen flex flex-col font-sans antialiased">
         <Nav />
