@@ -34,6 +34,17 @@ export function FileViewer({
   const curlCmd = `curl -O ${fullRawUrl}`;
 
   const [showScrollDown, setShowScrollDown] = useState(false);
+  const [codeCopied, setCodeCopied] = useState(false);
+
+  const copyCode = async () => {
+    try {
+      await navigator.clipboard.writeText(content);
+      setCodeCopied(true);
+      setTimeout(() => setCodeCopied(false), 1500);
+    } catch {
+      setCodeCopied(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => {
@@ -111,7 +122,15 @@ export function FileViewer({
       </div>
 
       {/* Code block */}
-      <div className="rounded-[var(--radius)] border border-[var(--border)] overflow-hidden">
+      <div className="relative rounded-[var(--radius)] border border-[var(--border)] overflow-hidden">
+        <button
+          type="button"
+          onClick={copyCode}
+          className="absolute top-3 right-3 z-10 px-3 py-1.5 text-xs font-medium rounded-lg bg-[var(--surface)]/90 border border-[var(--border)] text-[var(--muted)] transition-colors hover:bg-[var(--surface-hover)] hover:text-[var(--turtle-lime)] hover:border-[var(--turtle-green)]"
+          title="Copy code to clipboard"
+        >
+          {codeCopied ? "Copied" : "Copy code"}
+        </button>
         <div className="overflow-x-auto">
           <table className="w-full text-sm font-mono">
             <tbody>
