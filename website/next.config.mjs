@@ -8,7 +8,8 @@ const nextConfig = {
   ...(isDev ? {} : { output: "export" }),
   basePath: basePath || undefined,
   assetPrefix: basePath ? `${basePath}/` : undefined,
-  trailingSlash: true,
+  // false avoids EISDIR during static export when community [slug]/[[...path]] has both index and nested routes
+  trailingSlash: false,
   reactStrictMode: true,
   images: {
     unoptimized: true,

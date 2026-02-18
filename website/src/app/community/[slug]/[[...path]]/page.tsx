@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import path from "path";
+import fs from "fs/promises";
 import { communityRepos } from "@/data/community";
 import {
   listDirectory,
@@ -22,27 +24,49 @@ interface Props {
   params: { slug: string; path?: string[] };
 }
 
-export async function generateStaticParams(): Promise<{ slug: string; path?: string[] }[]> {
-  const params: { slug: string; path?: string[] }[] = [];
-
+/** List all paths under public/raw/community/{slug} (used when TurtlesPAC is not available, e.g. CI). Returns same shape as walkAllPaths: [["community", slug, ...rest]]. */
+async function walkRawCommunityPaths(slug: string): Promise<string[][]> {
+  const rawDir = path.join(process.cwd(), "public", "raw", "community", slug);
+  const results: string[][] = [];
   try {
-    for (const repo of communityRepos) {
-      params.push({ slug: repo.slug });
+    await recurse(rawDir, ["community", slug]);
+  } catch {
+    return results;
+  }
+  return results;
 
-      const allPaths = await walkAllPaths("community", repo.slug);
-      for (const segments of allPaths) {
-        const relativePath = segments.slice(2);
-        if (relativePath.length > 0) {
-          for (const path of paramVariantsForExport(relativePath)) {
-            params.push({ slug: repo.slug, path });
-          }
-        }
+  async function recurse(dir: string, segments: string[]) {
+    const entries = await fs.readdir(dir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (entry.name.startsWith(".")) continue;
+      const childSegments = [...segments, entry.name];
+      results.push(childSegments);
+      if (entry.isDirectory()) {
+        await recurse(path.join(dir, entry.name), childSegments);
       }
     }
-  } catch {
-    // CI or env without TurtlesPAC: export at least repo index pages
-    for (const repo of communityRepos) {
-      params.push({ slug: repo.slug });
+  }
+}
+
+export async function generateStaticParams(): Promise<{ slug: string; path: string[] }[]> {
+  const params: { slug: string; path: string[] }[] = [];
+
+  for (const repo of communityRepos) {
+    params.push({ slug: repo.slug, path: [] });
+
+    let paths: string[][];
+    try {
+      paths = await walkAllPaths("community", repo.slug);
+    } catch {
+      paths = await walkRawCommunityPaths(repo.slug);
+    }
+    for (const segments of paths) {
+      const relativePath = segments.slice(2);
+      if (relativePath.length > 0) {
+        for (const pathVariant of paramVariantsForExport(relativePath)) {
+          params.push({ slug: repo.slug, path: pathVariant });
+        }
+      }
     }
   }
 
