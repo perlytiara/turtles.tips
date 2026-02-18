@@ -3,24 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "ulimit -n 65536 2>/dev/null; WATCHPACK_POLLING=1 next dev",
+    "fetch-kaikaku": "tsx scripts/fetch-kaikaku-playlist.ts",
+    "refresh-video-metadata": "tsx scripts/refresh-video-metadata.ts",
+    "normalize-manifest": "tsx scripts/normalize-manifest.ts",
+    "generate-articles": "tsx scripts/generate-articles.ts",
+    "generate-article-images": "tsx scripts/generate-article-images.ts",
+    "optimize-article-images": "tsx scripts/optimize-article-images.ts",
+    "sync-manifest-images": "tsx scripts/sync-manifest-images.ts",
+    "build-search-index": "tsx scripts/build-search-index.ts",
+    "discover-programs": "tsx scripts/discover-programs.ts",
+    "dev": "for p in 3000 3001 3002 3010; do (fuser -k $p/tcp 2>/dev/null || { pid=$(lsof -ti:$p 2>/dev/null); [ -n \"$pid\" ] && kill -9 $pid; }) 2>/dev/null; done; sleep 2; ulimit -n 65536 2>/dev/null; WATCHPACK_POLLING=1 next dev -p 3010",
+    "dev:clean": "rm -rf .next && npm run dev",
+    "dev:pages": "npm run prebuild && BASE_PATH=/turtles.tips NEXT_PUBLIC_SITE_URL=https://perlytiara.github.io/turtles.tips WATCHPACK_POLLING=1 next dev",
     "dev:safe": "ulimit -n 65536 2>/dev/null; WATCHPACK_POLLING=1 next dev",
-    "prebuild": "bash scripts/copy-raw-files.sh",
+    "prebuild": "bash scripts/copy-raw-files.sh && npm run build-search-index",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
     "next": "^14.2.21",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10",
-    "postcss": "^8",
-    "tailwindcss": "^3",
     "@types/node": "^22",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10",
+    "dotenv": "^17.3.1",
+    "postcss": "^8",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^3",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   }
 }

@@ -98,7 +98,7 @@ export function FileBrowser({
                 </tr>
               )}
               {entries.map((entry) => {
-                const href = `${basePath}/${entry.name}`;
+                const href = `${basePath}/${encodeURIComponent(entry.name)}${entry.isDir ? "/" : ""}`;
                 const rawHref = `${rawBase}/${entry.name}`;
                 const fullRawHref =
                   siteBasePath ? `${siteBasePath}${rawHref}` : rawHref;

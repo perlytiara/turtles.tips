@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 // BASE_PATH set only in GitHub Actions (deploy); local dev uses root /
 const basePath = process.env.BASE_PATH ?? "";
+const isDev = process.env.NODE_ENV === "development";
 
 const nextConfig = {
-  output: "export",
+  // Static export only for production; dev server needs normal mode for CSS
+  ...(isDev ? {} : { output: "export" }),
   basePath: basePath || undefined,
   assetPrefix: basePath ? `${basePath}/` : undefined,
   trailingSlash: true,
@@ -15,12 +17,17 @@ const nextConfig = {
     if (dev) {
       config.watchOptions = {
         ...config.watchOptions,
+        aggregateTimeout: 800,
         ignored: [
           "**/node_modules/**",
           "**/.git/**",
           "**/.next/**",
           "**/out/**",
           "**/TurtlesPAC/**",
+          "**/public/**",
+          "**/content/**",
+          "**/scripts/**",
+          "**/.env*",
           "../**",
           "../../**",
         ],

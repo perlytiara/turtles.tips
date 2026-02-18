@@ -1,13 +1,25 @@
 import Link from "next/link";
+import { listDirectory } from "@/lib/files";
 import { communityRepos } from "@/data/community";
 
-export default function CreditsPage() {
+export default async function CreditsPage() {
+  let programAuthors: { name: string }[] = [];
+  try {
+    const entries = await listDirectory("programs");
+    programAuthors = entries.filter((e) => e.isDir).map((e) => ({ name: e.name }));
+  } catch {
+    // ignore
+  }
+
   return (
     <div className="space-y-8">
       <div>
         <h1 className="text-3xl font-bold text-[var(--turtle-lime)] mb-2">Credits</h1>
         <p className="text-[var(--muted)]">
           turtles.tips and TurtlesPAC credit all authors — programs and docs by original creators.
+        </p>
+        <p className="text-sm text-[var(--muted)] mt-2">
+          Files on this site are forked copies of the originals. Our versions may have issues or differ; they are sometimes kept only to work on something further or fix a bug.
         </p>
       </div>
 
@@ -16,12 +28,31 @@ export default function CreditsPage() {
         <p className="text-sm text-[var(--muted)] mb-2">
           The main program archive is maintained at:
         </p>
-        <Link href="/programs" className="font-mono text-[var(--turtle-lime)]">
+        <Link href="/programs" className="font-mono text-[var(--turtle-lime)] hover:underline">
           TurtlesPAC/programs
         </Link>
-        <p className="text-xs text-[var(--muted)] mt-1">
+        <p className="text-xs text-[var(--muted)] mt-1 mb-4">
           Source: perlytiara/CC-Tweaked-TurtsAndComputers
         </p>
+        {programAuthors.length > 0 && (
+          <>
+            <p className="text-sm text-[var(--muted)] mb-2">
+              Names in the programs folder (credit to each):
+            </p>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1 text-sm font-mono">
+              {programAuthors.map((a) => (
+                <li key={a.name}>
+                  <Link
+                    href={`/programs/${encodeURIComponent(a.name)}`}
+                    className="text-[var(--turtle-lime)] hover:underline"
+                  >
+                    {a.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
       </section>
 
       <section className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-6 sm:p-8">
