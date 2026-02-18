@@ -21,7 +21,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive
+          # One level only: avoid slow recursive clone of TurtlesPAC community submodules.
+          # Build only needs website source; content/public should be committed or baked in.
+          submodules: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
