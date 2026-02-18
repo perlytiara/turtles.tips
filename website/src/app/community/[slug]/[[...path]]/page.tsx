@@ -22,20 +22,27 @@ interface Props {
   params: { slug: string; path?: string[] };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string; path?: string[] }[]> {
   const params: { slug: string; path?: string[] }[] = [];
 
-  for (const repo of communityRepos) {
-    params.push({ slug: repo.slug });
+  try {
+    for (const repo of communityRepos) {
+      params.push({ slug: repo.slug });
 
-    const allPaths = await walkAllPaths("community", repo.slug);
-    for (const segments of allPaths) {
-      const relativePath = segments.slice(2);
-      if (relativePath.length > 0) {
-        for (const path of paramVariantsForExport(relativePath)) {
-          params.push({ slug: repo.slug, path });
+      const allPaths = await walkAllPaths("community", repo.slug);
+      for (const segments of allPaths) {
+        const relativePath = segments.slice(2);
+        if (relativePath.length > 0) {
+          for (const path of paramVariantsForExport(relativePath)) {
+            params.push({ slug: repo.slug, path });
+          }
         }
       }
+    }
+  } catch {
+    // CI or env without TurtlesPAC: export at least repo index pages
+    for (const repo of communityRepos) {
+      params.push({ slug: repo.slug });
     }
   }
 
