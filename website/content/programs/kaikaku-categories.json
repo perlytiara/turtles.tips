@@ -1,0 +1,12 @@
+{
+  "categories": [
+    { "id": "mining", "order": 1, "keywords": ["mining", "strip", "quarry", "tclear", "excavate", "dig", "ore"] },
+    { "id": "farming", "order": 2, "keywords": ["tree", "farm", "harvest", "crop", "flower", "mob farm", "breed"] },
+    { "id": "building", "order": 3, "keywords": ["build", "house", "mansion", "dome", "platform", "stairs", "chandelier", "piston door", "9x9", "town"] },
+    { "id": "utilities", "order": 4, "keywords": ["loader", "pastebin", "door", "trap", "reactor", "firework", "botania", "milk", "harvester", "drone", "waitfor", "password"] }
+  ],
+  "programPaths": {
+    "ep22": ["Kaikaku/tLoader.lua"],
+    "ep23": ["perlytiara/tClear/tClear.lua", "perlytiara/tClear/tClear_multi.lua"]
+  }
+}

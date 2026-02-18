@@ -1,0 +1,2935 @@
+[
+  {
+    "id": "kaikaku-ep23",
+    "slug": "computercraft-tclear-not-really-a-strip-miner-ep-23-turtle-programs",
+    "title": "tClear - not really a strip miner, EP 23 Turtle Programs",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/tClear/tClear.lua",
+      "perlytiara/tClear/tClear_multi.lua"
+    ],
+    "youtubeVideoId": "S6MHNtBDhcY",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: tClear - not really a strip miner, EP 23 Turtle Programs",
+    "videoDescription": "This program clears a specified cuboid (depths x width x height) from all blocks. In the normal mode the turtle digs 3 layers in one go. The option \"layerByLayer\" can be used e.g. for mining obsidian. The turtle mines and moves only within the specified area. The option \"stripMiner\" kind of missus the program for strip mining. However, there is no inventory management or torch placement. Hope this helps you. Enjoy! :)\n\nTimestamps: WORK IN PROGRESS!\n00:00 Intro\n00:50 Program idea\n01:25 Demo dig cuboid\n02:38 Demo: mining obsidian (option: layerByLayer)\n04:15 Demo: dig basement (option: within)\n06:25 Positive and negative prameters\n09:08 Pastebin and info screens\n11:59 Demo: strip miner (option: stripminer)\n13:32 Code: shell.run()\n14:40 Outro, preview teaser, outtakes\n\nLinks:\nNeed an intro to turtles? https://www.youtube.com/watch?v=ZgbdfJpt7Ks&t=906s\n\n\nGet it either using the tLoader program: tLoader tClear\nOr the \"old fashioned\" way: pastebin get 07653J4E tClear\n\n***** Valuable info sources *****\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.1/\n\n***** About ComputerCraft *****\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\n***** About the modpack *****\nI'm using FTB modpack Direwolf20 1.16 (v1.7.0). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\n***** Questions and Feedback *****\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-04-02T18:48:29Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/S6MHNtBDhcY/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-tclear-not-really-a-strip-miner-ep-23-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-tclear-not-really-a-strip-miner-ep-23-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-tclear-not-really-a-strip-miner-ep-23-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-tclear-not-really-a-strip-miner-ep-23-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep24",
+    "slug": "computercraft-twaitfor-password-door-remote-door-traps-and-more-ep-24-turtle-programs",
+    "title": "tWaitFor - password door, remote door, traps and more, EP 24 Turtle Programs",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/tWaitFor.lua",
+      "perlytiara/tSend.lua"
+    ],
+    "youtubeVideoId": "i2RYree0YSo",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: tWaitFor - password door, remote door, traps and more, EP 24 Turtle Programs",
+    "videoDescription": "In this episode I demonstrate you how easy to use and useful ComputerCraft events can be. The two programs tWaitFor and tSend make utilizing events simple and can be applied in many different ways to increase interaction between turtles and players. There are detailed timestamps, so you can skip to the different scections. Enjoy! :)\n\nTimestamps:\n00:00 Intro\n01:01 Program idea\n02:13 Overview demo applications\n03:47 Demo of all 5 events used (using progam call)  \n05:39 Demo trap program (using Lua interpreter, simple)\n07:44 Demo turtle synchronization (using Lua interpreter, complex)\n08:41 Demo remote doors (using startup, simple)\n10:33 Demo ring the bell (using startup, multiple reactions)\n11:43 Code walkthrough bell\n15:16 Demo door security (using complex startup, multiple event tests)\n17:00 Code walkthrough security\n25:08 Variation on door security set-up\n26:10 Pastebin get\n27:18 Info screens\n31:29 Noteblock demo\n\nLinks:\nNeed an intro to turtles? https://www.youtube.com/watch?v=ZgbdfJpt7Ks&t=906s\n\npastebin get 9vzPCd4T tWaitFor\npastebin get h3xcC9S1 tSend\nOr download using the latest version of tLoader (TUAP1vFU).\n\nFor easier access I put here the startup program of the \"bell turtle\":\n\n-- example program to demonstrate different reaction \n--   on different events triggered using the return value of tWaitFor\n\nlocal returnValue  -- here we'll store the values returned by tWaitFor\n\n-- infinite loop\nwhile true do\n  -- call the tWaitFor program with the help of some lua magic ;)\n  returnValue = assert(loadfile(\"tWaitFor\") (\"rn\", \"1\",  \"ding\", \n                                             \"rn\", \"2\",  \"alarm\",\n                                             \"al\",\"12.0\",\"12.0\"))\n  if returnValue == 1 then\n    -- single ding by rednet\n    redstone.setOutput(\"front\",true)\n    sleep(1)\n    redstone.setOutput(\"front\",false)\n \n  elseif returnValue == 2 then\n    -- 20 alarm rings\n    for i = 1,20 do\n      redstone.setOutput(\"front\",true)\n      sleep(0.1)\n      redstone.setOutput(\"front\",false)\n      sleep(0.1)\n    end\n  \n  elseif returnValue == 3 then\n    -- 4 dings at noon\n    for i = 1,4 do\n      redstone.setOutput(\"front\",true)\n      sleep(1)\n      redstone.setOutput(\"front\",false)\n      sleep(1)\n    end  \n  end\nend  -- end of program\n\n\n\n\n***** Valuable info sources *****\nThe ComputerCraft forum: https://forums.computercraft.cc/\n\n\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.1/\n\n***** About ComputerCraft *****\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\n***** About the modpack *****\nI'm using FTB modpack Direwolf20 1.16 (v1.7.0). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\n***** Questions and Feedback *****\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\nNo Frills Comparsa by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/3535-no-frills-comparsa\nLicense: https://filmmusic.io/standard-license\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license\n\nThief in the Night by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4521-thief-in-the-night\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-04-17T19:21:21Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/i2RYree0YSo/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-twaitfor-password-door-remote-door-traps-and-more-ep-24-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-twaitfor-password-door-remote-door-traps-and-more-ep-24-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-twaitfor-password-door-remote-door-traps-and-more-ep-24-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-twaitfor-password-door-remote-door-traps-and-more-ep-24-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-client-diglua",
+    "slug": "biggaminggamers-client-diglua",
+    "title": "client-dig",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/client-dig.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-client-diglua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-client-diglua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-client-diglua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-client-diglua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-client-quarrylua",
+    "slug": "biggaminggamers-client-quarrylua",
+    "title": "client-quarry",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/client-quarry.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-client-quarrylua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-client-quarrylua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-client-quarrylua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-ore-keeperlua",
+    "slug": "biggaminggamers-ore-keeperlua",
+    "title": "ore-keeper",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/ore-keeper.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-ore-keeperlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-ore-keeperlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-ore-keeperlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-ore-keeperlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-quarry-minerlua",
+    "slug": "biggaminggamers-quarry-minerlua",
+    "title": "quarry-miner",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/quarry-miner.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-quarry-minerlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-quarry-minerlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-quarry-minerlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-quarry-minerlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-simple-quarrylua",
+    "slug": "biggaminggamers-simple-quarrylua",
+    "title": "simple-quarry",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/simple-quarry.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-simple-quarrylua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-simple-quarrylua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-simple-quarrylua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-simple-quarrylua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-upward-quarry-testlua",
+    "slug": "biggaminggamers-upward-quarry-testlua",
+    "title": "upward-quarry-test",
+    "category": "mining",
+    "programPaths": [
+      "BigGamingGamers/upward-quarry-test.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-upward-quarry-testlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-upward-quarry-testlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-upward-quarry-testlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-upward-quarry-testlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-kaikaku-tclearlua",
+    "slug": "kaikaku-tclearlua",
+    "title": "tClear",
+    "category": "mining",
+    "programPaths": [
+      "Kaikaku/tClear.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/kaikaku-tclearlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/kaikaku-tclearlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-tclearlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-tclearlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-maengorn-clientdiglua",
+    "slug": "maengorn-clientdiglua",
+    "title": "clientdig",
+    "category": "mining",
+    "programPaths": [
+      "Maengorn/clientdig.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Maengorn",
+    "credits": "Maengorn",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/maengorn-clientdiglua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/maengorn-clientdiglua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-clientdiglua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-clientdiglua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-edig",
+    "slug": "perlytiara-edig",
+    "title": "eDig",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/eDig"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-edig/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-edig/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-edig/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-edig/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-epicminingturtle",
+    "slug": "perlytiara-epicminingturtle",
+    "title": "EpicMiningTurtle",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/EpicMiningTurtle"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-epicminingturtle/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-epicminingturtle/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-epicminingturtle/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-epicminingturtle/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-quarry",
+    "slug": "perlytiara-quarry",
+    "title": "quarry",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/quarry"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-quarry/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-quarry/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-quarry/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-quarry/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-tclear",
+    "slug": "perlytiara-tclear",
+    "title": "tClear",
+    "category": "mining",
+    "programPaths": [
+      "perlytiara/tClear"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-tclear/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-tclear/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-tclear/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-tclear/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-silvamord-epicminingturtlelua",
+    "slug": "silvamord-epicminingturtlelua",
+    "title": "EpicMiningTurtle",
+    "category": "mining",
+    "programPaths": [
+      "Silvamord/EpicMiningTurtle.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Silvamord",
+    "credits": "Silvamord",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/silvamord-epicminingturtlelua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/silvamord-epicminingturtlelua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/silvamord-epicminingturtlelua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/silvamord-epicminingturtlelua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-siphorns-quarrycclua",
+    "slug": "siphorns-quarrycclua",
+    "title": "quarry.cc",
+    "category": "mining",
+    "programPaths": [
+      "siphorns/quarry.cc.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "siphorns",
+    "credits": "siphorns",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/siphorns-quarrycclua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/siphorns-quarrycclua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/siphorns-quarrycclua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/siphorns-quarrycclua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep03",
+    "slug": "computercraft-turtle-programs-ep-03-mob-farm",
+    "title": "Mob Farm",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/bMobFarm.lua"
+    ],
+    "youtubeVideoId": "hUN3mO_y7mo",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "Computercraft - Turtle Programs, Ep 03: Mob Farm",
+    "videoDescription": "The third episode of my 'Turtle Programs' series is about building a mob farm with a normal turtle (so no diamonds needed for tools). I explain how to use the turtle program build_MobFarm and what options you have (excluding 2 hidden decorative options ;). Of course we also watch in a timelapse the turtle building the mob farm. You can download the program from pastebin. If you have problems using the program, leave me a comment and I'll try to help. Hope it helps in getting experience and drops in early game.\n\nUpdate 2015-01-05: Now the turtle should no longer run away when shift clicking materials into its inventory :)\n\nLinks:\nprogram build_MobFarm: http://pastebin.com/unPPhDpQ\nvideo where I use this program: not so far, but there will be one\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nBeachfront Celebration, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle builds. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-10-26T19:09:11Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/hUN3mO_y7mo/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-03-mob-farm/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-03-mob-farm/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-03-mob-farm/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-03-mob-farm/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep10",
+    "slug": "computercraft-turtle-programs-ep-10-flower-pot",
+    "title": "Turtle Programs, Ep 10: Flower Pot",
+    "category": "farming",
+    "programPaths": [],
+    "youtubeVideoId": "LI_970VZfyc",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 10: Flower Pot",
+    "videoDescription": "In this video we do pretty up your home. A turtle changes regularly the flowers in a flower pot. Also I present you the outcome of last video's poll for the next program: And the winner is ...\nEnjoy! :)\n\nLinks:\nprogram bMansion: http://youtu.be/EiBtxqUT\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.7 (v1.0.3) with CameraStudio (v2.1710) and Fastcraft (v1.9).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nChee Zee Beach, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe for more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-01-25T13:20:29Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/LI_970VZfyc/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-10-flower-pot/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-10-flower-pot/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-10-flower-pot/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-10-flower-pot/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep11",
+    "slug": "computercraft-turtle-programs-ep-11-tree-farm-pastebin-qn008fpa",
+    "title": "Turtle Programs, Ep 11: Tree Farm (pastebin: Qn008fPa)",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/aTreeFarm.lua"
+    ],
+    "youtubeVideoId": "eMxNI2QjO1k",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 11: Tree Farm (pastebin: Qn008fPa)",
+    "videoDescription": "NEW PASTEBIN LINK: http://pastebin.com/Qn008fPa\n\nIn this epsiode you will learn about the automated Tree Farm program, which won the poll I did for you. I show you how to download the program, make the turtle set-up the tree farm (optional), how to run the farm and I explain some of the program mechanics. You can either use a crafty felling turtle or a crafty mining turtle to run this automated farm that will provide you thousands of wood :)\nTo keep this video short I split it up in two parts. All the important stuff to run the progam is in this first part, so don't you worry ;)\nHope this helps you especially in early game. Enjoy! :)\n\n2018-01-07 update v1.40: bugfix turtle start position \n\nLinks:\nprogram aTreeFarm: http://pastebin.com/Qn008fPa\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.7 (v1.0.3) with CameraStudio (v2.1710) and Fastcraft (v1.9).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nStealth Groover, by Kevin MacLeod (incompetech.com).\nTea Roots, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-02-01T14:54:57Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/eMxNI2QjO1k/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-11-tree-farm-pastebin-qn008fpa/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-11-tree-farm-pastebin-qn008fpa/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-11-tree-farm-pastebin-qn008fpa/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-11-tree-farm-pastebin-qn008fpa/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep12",
+    "slug": "computercraft-turtle-programs-ep-12-tree-farm-part-2-further-features-pastebin-qn008fpa",
+    "title": "Turtle Programs, Ep 12: Tree Farm, part 2 (further features) (pastebin: Qn008fPa)",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/aTreeFarm.lua"
+    ],
+    "youtubeVideoId": "IDkcnsef_ZI",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 12: Tree Farm, part 2 (further features) (pastebin: Qn008fPa)",
+    "videoDescription": "This is part 2 of the automated tree farm program. I show you some more details about the program: \na) redstone stop and\nb) how to let the turtle run only for x turns\nA major part of the video is the \"tree contest\", where we see which tree type yields most.\nHope this helps you. Enjoy! :)\n\nLinks:\nTree farm part 1: http://youtu.be/eMxNI2QjO1k\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.7 (v1.0.3) with CameraStudio (v2.1710) and Fastcraft (v1.9).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nStealth Groover, by Kevin MacLeod (incompetech.com).\nTea Roots, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-02-15T15:59:02Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/IDkcnsef_ZI/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-12-tree-farm-part-2-further-features-pastebin-qn008fpa/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-12-tree-farm-part-2-further-features-pastebin-qn008fpa/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-12-tree-farm-part-2-further-features-pastebin-qn008fpa/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-12-tree-farm-part-2-further-features-pastebin-qn008fpa/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep20",
+    "slug": "computercraft-automated-harvester-ep-20-turtle-programs",
+    "title": "Automated Harvester, EP 20 Turtle programs",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/aHarvester.lua"
+    ],
+    "youtubeVideoId": "Oz2xnDchqFg",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Automated Harvester, EP 20 Turtle programs",
+    "videoDescription": "In this episode I show you a very versatile automated harvester turtle program. It even creates a startup file, so it boots automatically when the game is loaded. While not beeing optimized for one pant type or specified farm size, it can handle a bunch of plants (that grow from a source block) and you have great freedom about the shape of the harvesting area. Hope this helps you ... Enjoy! :)\n\nTimestamps:\n00:00 Intro\n00:24 Program idea\n01:35 Demo farm building (time lapse 1)\n06:45 Melon and pump farm (time lapse 2)\n09:46 Bamboo farm (time lapse 3, notDown)\n12:50 Chest placement and kelp farm (time lapse 4)\n15:26 Lossless kelp farm (time lapse 5)\n16:31 Mushroom farm (time lapse 6, notUp)\n19:17 17 different plants farm including nether vines\n26:00 Demo setup auto boot (startup)\n27:39 Multiple turtles and program details (noCannibalism)\n35:33 Farewell and outro\n\npastebin get ZVc6H649 aHarvester\n(program name is required for auto boot)\n\nList of parameters:\nnotDown, notUp, minFuelxxxx, critFuelxxxx, n1(=waiting at home), n2 (=max. # turns), noCannibalism\n\nAbout ComputerCraft:\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\nValuable info sources are:\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\n\nAbout LUA;\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nAbout the modpack:\nI'm using FTB modpack Direwolf20 1.16 (v1.16). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\nMaccary Bay by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4010-maccary-bay\nLicense: https://filmmusic.io/standard-license\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license\n\nRetroFuture Clean by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4277-retrofuture-clean\nLicense: https://filmmusic.io/standard-license\n\nThief in the Night by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4521-thief-in-the-night\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-03-05T19:16:08Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/Oz2xnDchqFg/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-automated-harvester-ep-20-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-automated-harvester-ep-20-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-automated-harvester-ep-20-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-automated-harvester-ep-20-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-cactus-farmlua",
+    "slug": "biggaminggamers-cactus-farmlua",
+    "title": "cactus-farm",
+    "category": "farming",
+    "programPaths": [
+      "BigGamingGamers/cactus-farm.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-cactus-farmlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-cactus-farmlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-cactus-farmlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-cactus-farmlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-harvest0lua",
+    "slug": "biggaminggamers-harvest0lua",
+    "title": "harvest_0",
+    "category": "farming",
+    "programPaths": [
+      "BigGamingGamers/harvest_0.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-harvest0lua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-harvest0lua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-harvest0lua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-harvest0lua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-harvest1lua",
+    "slug": "biggaminggamers-harvest1lua",
+    "title": "harvest_1",
+    "category": "farming",
+    "programPaths": [
+      "BigGamingGamers/harvest_1.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-harvest1lua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-harvest1lua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-harvest1lua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-harvest1lua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-kaikaku-aharvesterlua",
+    "slug": "kaikaku-aharvesterlua",
+    "title": "aHarvester",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/aHarvester.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/kaikaku-aharvesterlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/kaikaku-aharvesterlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-aharvesterlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-aharvesterlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-kaikaku-atreefarmlua",
+    "slug": "kaikaku-atreefarmlua",
+    "title": "aTreeFarm",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/aTreeFarm.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/kaikaku-atreefarmlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/kaikaku-atreefarmlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-atreefarmlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-atreefarmlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-kaikaku-bmobfarmlua",
+    "slug": "kaikaku-bmobfarmlua",
+    "title": "bMobFarm",
+    "category": "farming",
+    "programPaths": [
+      "Kaikaku/bMobFarm.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/kaikaku-bmobfarmlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/kaikaku-bmobfarmlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-bmobfarmlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-bmobfarmlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-michael-reeves808-harvestlua",
+    "slug": "michael-reeves808-harvestlua",
+    "title": "harvest",
+    "category": "farming",
+    "programPaths": [
+      "Michael-Reeves808/harvest.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Michael-Reeves808",
+    "credits": "Michael-Reeves808",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/michael-reeves808-harvestlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/michael-reeves808-harvestlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-harvestlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-harvestlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-simplebeni-simplebenifarmlua",
+    "slug": "simplebeni-simplebenifarmlua",
+    "title": "SimpleBeniFarm",
+    "category": "farming",
+    "programPaths": [
+      "SimpleBeni/SimpleBeniFarm.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "SimpleBeni",
+    "credits": "SimpleBeni",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/simplebeni-simplebenifarmlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/simplebeni-simplebenifarmlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/simplebeni-simplebenifarmlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/simplebeni-simplebenifarmlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep01",
+    "slug": "computercraft-turtle-programs-ep-01-direwolf20-9x9",
+    "title": "direwolf20 9x9",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "5YmV7pDc8pw",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft - Turtle Programs, Ep 01: direwolf20 9x9",
+    "videoDescription": "This is the start of my 'Turtle Programs' series. I explain how to use the turtle program build_9x9. You can download it from pastebin. If you have problems using the program, leave me a comment and I'll try to help. \n\nLinks:\nprogram build_9x9: http://pastebin.com/a5nWDnK6\nvideo with 9x9: http://youtu.be/ciZi9BOiw2U\ndirewolf20's channel (one of my favorite minecrafters): http://www.youtube.com/user/direwolf20\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nBassa Island Game Loop, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle builds. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-10-02T14:33:20Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/5YmV7pDc8pw/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-01-direwolf20-9x9/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-01-direwolf20-9x9/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-01-direwolf20-9x9/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-01-direwolf20-9x9/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep02",
+    "slug": "computercraft-turtle-programs-ep-02-town-house",
+    "title": "Town House",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "qghzckrjAq4",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft - Turtle Programs, Ep 02: Town House",
+    "videoDescription": "This is second episode of my 'Turtle Programs' series. I explain how to use the turtle program build_TownHouse. You can download it from pastebin. If you have problems using the program, leave me a comment and I'll try to help. \n\nLinks:\nprogram build_TownHouse: http://pastebin.com/FHw76UHP\nvideo where I use this program: http://youtu.be/wSo17UJMeqo\nBeardedMan's video with the original design: http://youtu.be/Bn3Sdf1W1gQ\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nBeach Party, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle builds. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-10-19T20:12:50Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/qghzckrjAq4/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-02-town-house/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-02-town-house/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-02-town-house/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-02-town-house/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep04",
+    "slug": "computercraft-turtle-programs-ep-04-platforms",
+    "title": "Platforms",
+    "category": "building",
+    "programPaths": [
+      "Kaikaku/bMobFarm.lua",
+      "perlytiara/tPlatform/tPlatform_fixed.lua",
+      "perlytiara/tPlatform/tPlatform_xyz.lua"
+    ],
+    "youtubeVideoId": "Pcf7pUeN020",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft - Turtle Programs, Ep 04: Platforms",
+    "videoDescription": "In this episode of my 'Turtle Programs' series I present you a program which builds rectangular platforms of any size for you. I explain how to use the turtle program tPlatform and show you several possible applications. This includes an example how to combine several program calls to build more complex buildings. Of course we also have some timelapse scenes (sorry for the bad quality of the first, the second is again nice ). You can download the program from pastebin. If you have problems using the program, leave me a comment and I'll try to help. Hope it helps you in building whatever needs some platforms ;)\n\nUpdate 2015-03-21: Tied up the code a little bit.\nUpdate 2015-03-28: Selects slot 1 at start, thx Robinn57.\nUpdate 2016-02-28: Now the turtle will tell you if you need to (manually) refuel it\n\nLinks:\nprogram build_MobFarm: http://pastebin.com/fbyxVzSX\nvideo with the direwolf20 9x9 program: \nvideo where I use this program: not so far, but there will be one\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nModern Jazz Samba, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle programs. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-11-02T23:27:16Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/Pcf7pUeN020/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-04-platforms/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-04-platforms/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-04-platforms/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-04-platforms/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep06",
+    "slug": "computercraft-turtle-programs-ep-06-half-timber-house",
+    "title": "half-timber House",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "heEPL6UeuTc",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft - Turtle Programs, Ep 06: half-timber House",
+    "videoDescription": "In this episode of 'Turtle Programs' you get the download for my very first house building program I used in episode 1 and 3 of my 'Press Button Turtle Build' series. In the time-lapse we see 4 turtles building 2 houses. The program offers you 2 options for building: A) build full house OR only one story B) put in a door OR not. Enjoy! :)\n\nLinks:\nprogram bHalfTimberHouse: http://pastebin.com/hxeZ5Wui\nvideos some more info about the program's possibilities:\n'First House': http://youtu.be/rn8dRgB24Y0\n'First Neighbors': http://youtu.be/OMOTBuOm9gE\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nHouse Party, by Angry Lemon (http://www.youtube.com/channel/UC8ItUcDZbzDUspJ7wTle63A/about)\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle programs. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-12-01T12:23:42Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/heEPL6UeuTc/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-06-half-timber-house/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-06-half-timber-house/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-06-half-timber-house/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-06-half-timber-house/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep07",
+    "slug": "computercraft-turtle-programs-ep-07-build-mob-head",
+    "title": "Turtle Programs, Ep 07: build Mob Head",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "1nelfpo9g-Q",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 07: build Mob Head",
+    "videoDescription": "In this episode of 'Turtle Programs' we meet again turtle T17 and learn about the turtle program buildHead. With it you can build more than 16 different mob heads (for the exact number you can either count them in the video or have a look into the code). All heads are 8x8 and can be built horizontally as a platform or vertically like a wall. I will also submit this program to dan200, as he is looking for community made programs to include in ComputerCraft. This would be great :) In the final time-lapse we see 14 turtles many, many heads,enjoy! :)\n\nLinks:\nprogram buildHead: http://pastebin.com/HP3AW3sd\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nHappy Bee, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle programs. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-12-07T21:58:40Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/1nelfpo9g-Q/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-07-build-mob-head/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-07-build-mob-head/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-07-build-mob-head/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-07-build-mob-head/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep09",
+    "slug": "computercraft-turtle-programs-ep-09-build-mansion",
+    "title": "Turtle Programs, Ep 09:  build Mansion",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "L1aKn9jXE6c",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 09:  build Mansion",
+    "videoDescription": "In this epsiode of 'Turtle Programs' you see turtles building three different mansions. So far it's the building program with the most programming effort for me. I would be happy, if you try out this program. Enjoy! :)\n\nPoll: is open until next video!\nPlease, vote for either:\n1) tree farm\n2) writing with turtle\n3) AE2 processor crafting\n\nLinks:\nprogram bMansion: http://pastebin.com/PfdurUkb\noriginal mansion: http://tinyurl.com/ldalygk\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.7 (v1.0.3) with CameraStudio (v2.1710) and Fastcraft (v1.9).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPrivate Eye, by Kevin MacLeod (incompetech.com).\nRising Game, by Kevin MacLeod (incompetech.com).\nPamgaea, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe for more videos and programs.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-01-18T00:02:36Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/L1aKn9jXE6c/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-09-build-mansion/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-09-build-mansion/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-09-build-mansion/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-09-build-mansion/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep14",
+    "slug": "computercraft-turtle-programs-ep-14-build-dome-announcement",
+    "title": "Turtle Programs, Ep 14: build Dome + Announcement",
+    "category": "building",
+    "programPaths": [
+      "perlytiara/dome_tunnels/dome_tunnels.lua",
+      "perlytiara/dome_tunnels/dome_tunnels_size2.lua"
+    ],
+    "youtubeVideoId": "h5DNjJd-ePg",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 14: build Dome + Announcement",
+    "videoDescription": "In this episode we see the building program for a 51x51x21 dome. Additionally there is an announcement on some changes to the channel for the next weeks / months. \nAs I said in the video, I would like to see your videos or pictures of you using the dome program (half dome, force field like shield, half-dome, other materials,...). Leave me a comment and I'll check it out. Hope you like the program and are not too mad with me for temporarily setting the turtle programs on hold. Enjoy! :)\n\nTime stamps:\n00:00 Intro & announcement\n10:28 Turtle placement (1/2)\n13:22 Program pastebin\n17:18 Correct turtle placement (2/2)\n18:23 Building time lapse\n21:45 Final remarks & farewell\n\nAbout the mods:\nIn this world I use a custom mod pack.\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\n\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nNo Frills Comparsa, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-03-29T19:02:55Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/h5DNjJd-ePg/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-14-build-dome-announcement/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-14-build-dome-announcement/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-14-build-dome-announcement/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-14-build-dome-announcement/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep18",
+    "slug": "computercraft-piston-door-2x3-ep-18-turtle-programs",
+    "title": "Piston Door 2x3, EP 18 Turtle programs",
+    "category": "building",
+    "programPaths": [
+      "perlytiara/bDoor2x3.lua"
+    ],
+    "youtubeVideoId": "De1Dy6d2VgU",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Piston Door 2x3, EP 18 Turtle programs",
+    "videoDescription": "Welcome back! In this epsiode we built a lot of piston doors. Enjoy! :)\r\n\r\n00:00 Intro\n02:22 Turtles & redstone\n03:44 Program demo\n05:20 Program details\n09:52 \"Underground\" demo\n11:17 Farewell & outro\n\npastebin get BvavMNTW bDoor2x3\n\n\nAbout ComputerCraft:\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\nValuable info sources are:\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.2/\n\nAbout the modpack:\nI'm using FTB modpack Direwolf20 1.16 (v1.16). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n\n- - - - - - - - - -\n\nMusic:\r\nPamgaea, by Kevin MacLeod (incompetech.com).",
+    "videoPublishedAt": "2021-01-31T19:05:19Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/De1Dy6d2VgU/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-piston-door-2x3-ep-18-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-piston-door-2x3-ep-18-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-piston-door-2x3-ep-18-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-piston-door-2x3-ep-18-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep19",
+    "slug": "computercraft-grians-chandelier-ep-19-turtle-programs",
+    "title": "Grian's Chandelier, EP 19 Turtle programs",
+    "category": "building",
+    "programPaths": [],
+    "youtubeVideoId": "ZgbdfJpt7Ks",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Grian's Chandelier, EP 19 Turtle programs",
+    "videoDescription": "In this epsiode our turtle builds Grian's Chandelier from Hermitcraft Season 7. But before we can run the program, we need a place to put it. Enjoy! :)\n\npastebin get bMky9MzP bChandelier\n\nTimestamps:\n00:00 Intro\n01:38 Program idea\n02:42 A place to build the chandelier\n04:18 Dome timelapse\n08:44 Program explanation\n11:45 Chandelier timelapse \n13:36 Chandelier ready & farewell\n14:45 Outro\n15:06 Turtle starting info\n\nLinks:\nGrian's video: https://www.youtube.com/watch?v=TTWwOKIivRs&t=550 \n\nAbout ComputerCraft:\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\nValuable info sources are:\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\n\nAbout LUA;\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nAbout the modpack:\nI'm using FTB modpack Direwolf20 1.16 (v1.16). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nNo Frills Comparsa by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/3535-no-frills-comparsa\nLicense: https://filmmusic.io/standard-license\n\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-02-07T12:39:35Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/ZgbdfJpt7Ks/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-grians-chandelier-ep-19-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-grians-chandelier-ep-19-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-grians-chandelier-ep-19-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-grians-chandelier-ep-19-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-kaikaku-tplatformlua",
+    "slug": "kaikaku-tplatformlua",
+    "title": "tPlatform",
+    "category": "building",
+    "programPaths": [
+      "Kaikaku/tPlatform.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/kaikaku-tplatformlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/kaikaku-tplatformlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-tplatformlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/kaikaku-tplatformlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-dometunnels",
+    "slug": "perlytiara-dometunnels",
+    "title": "dome_tunnels",
+    "category": "building",
+    "programPaths": [
+      "perlytiara/dome_tunnels"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-dometunnels/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-dometunnels/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-dometunnels/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-dometunnels/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-stairs",
+    "slug": "perlytiara-stairs",
+    "title": "stairs",
+    "category": "building",
+    "programPaths": [
+      "perlytiara/stairs"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-stairs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-stairs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-stairs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-stairs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-tplatform",
+    "slug": "perlytiara-tplatform",
+    "title": "tPlatform",
+    "category": "building",
+    "programPaths": [
+      "perlytiara/tPlatform"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-tplatform/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-tplatform/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-tplatform/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-tplatform/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep05",
+    "slug": "computercraft-turtle-programs-ep-05-donkey-sanctuary",
+    "title": "Donkey Sanctuary",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "eduyXU5uJg4",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft - Turtle Programs, Ep 05: Donkey Sanctuary",
+    "videoDescription": "In this episode of 'Turtle Programs' we see a pixelart from Genericb. The Donkey Sanctuary he built for his beloved donkey Danger Zone. Well, actually it is not the complete sanctuary, but the entrance. I also introduce you to my special turtle T17, it has some more tricks on board than my other turtles ;)\nBeside the time lapse for the sanctuarty there is a second one for even more donkeys :)\n\nLinks:\nprogram bDonkeySanctuary: http://pastebin.com/Xc98RnqU\nvideo where Genericb builds this pixelart: http://www.youtube.com/watch?v=F88wHpTHBnA\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.5 (v1.1.2) with CameraStudio (v2.8.5).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nComparsa, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nAs every (new) youtuber I'm very interested in your opinion. Please, comment the video and maybe share some of your ideas for future turtle programs. Please, like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2013-11-17T20:19:34Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/eduyXU5uJg4/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-05-donkey-sanctuary/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-05-donkey-sanctuary/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-05-donkey-sanctuary/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-05-donkey-sanctuary/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep08",
+    "slug": "computercraft-turtle-programs-ep-08-applied-energistics-crystals",
+    "title": "Turtle Programs, Ep 08: Applied Energistics Crystals",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "dvQckWmE8QU",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 08: Applied Energistics Crystals",
+    "videoDescription": "In this episode of 'Turtle Programs' a turtle helps us with growing crystals in an ME system of Applied Energistics 2. The turtle manages all three typs of pure crystals (certus, nether, fluix) and the regular (none pure) fluix crystal. Hope this helps you to set up your ME system. Enjoy! :)\n\nUpdated 2015-02-27: Sleep time default is now 20 sec.\n\nLinks:\nprogram aAESeeds: http://pastebin.com/stXEtJ6C\nAE2 intro by direwolf20: https://www.youtube.com/watch?v=duFp8qP-308 (first video)\n\nAbout the mods:\nI'm using FTB modpack Direwolf20 1.7 (v1.0.3) with CameraStudio (v2.1710) and Fastcraft (v1.9).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nStealth Groover, by Kevin MacLeod (incompetech.com).\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe if you want to see more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-01-04T13:36:53Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/dvQckWmE8QU/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-08-applied-energistics-crystals/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-08-applied-energistics-crystals/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-08-applied-energistics-crystals/illo2.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep13",
+    "slug": "computercraft-turtle-programs-ep-13-space-shuttle",
+    "title": "Turtle Programs, Ep 13: Space Shuttle",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "1-t9KlololQ",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 13: Space Shuttle",
+    "videoDescription": "In this video I show you the turtle building program for a space shuttle. I'm currently thinking about to start of a new big project and if I go for it, this will be a (small) part of it.\nMost blocks in the standard design are from chisel mod. Enjoy! :)\n\nLinks:\nProgram build space shuttle: http://pastebin.com/L1UQ3he3\n\nAbout the mods:\nIn this world I use a custom mod pack.\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com)\nKick Shock, by Kevin MacLeod (incompetech.com)\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe for more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2015-03-01T14:53:03Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/1-t9KlololQ/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-13-space-shuttle/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-13-space-shuttle/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-13-space-shuttle/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-13-space-shuttle/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep15",
+    "slug": "computercraft-turtle-programs-ep-15-fireworks-1000-subscribers",
+    "title": "Turtle Programs, Ep 15: Fireworks + 1000 Subscribers",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "wPmITk9tg7A",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 15: Fireworks + 1000 Subscribers",
+    "videoDescription": "It's been quite a while... Let's celebrate 1000+ subscribers and New Year's Eve with some nice fireworks. Hope you like the programm...  Enjoy! :)\n\nPoll is still open:\n  a) Harvest program\n  b) Mob farm builder, improved version 2\n  c) Mining program\n\nPastebin code: UYm0CCQ7 \n\nAbout the mods:\nI'm using FTB Presents Skyfactory 2.5 (v2.5.0) which includes ComputerCraft (v1.75).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com)\nWallpaper, by Kevin MacLeod (incompetech.com)\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe for more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2017-12-31T20:12:51Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/wPmITk9tg7A/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-15-fireworks-1000-subscribers/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-15-fireworks-1000-subscribers/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-15-fireworks-1000-subscribers/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-15-fireworks-1000-subscribers/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep16",
+    "slug": "computercraft-turtle-programs-ep-16-botania-endoflame-feeder",
+    "title": "Turtle Programs, Ep 16: Botania Endoflame Feeder",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "xE5f3Xs7PpU",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 16: Botania Endoflame Feeder",
+    "videoDescription": "Today I saw Direwolf20's Let's Play where he built a really compact contraption to feed his Endoflames from Botania in only 3 block spaces. He then added, that he challenges everyone to do this in a smaller space: Challenge accepted :)\n\nDire's challenge: https://www.youtube.com/watch?v=muvwWclzWhw @14:38\n\naEndoFeeder pastebin code : bMHsGY06\n\nForgot to say: If you start the program without paramters, you will get the usual info screens. \n\nHope this helps you ... . Enjoy! :)\n\nAbout the mods:\nI'm using FTB Presents Direwolf20 1.12 (v1.4.0) and added ComputerCraft (v1.80pr1).\nTurtles are part of dan200's mod computercraft which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com)\nNo Frills Comparsa, by Kevin MacLeod (incompetech.com)\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2018-01-02T15:50:44Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/xE5f3Xs7PpU/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-16-botania-endoflame-feeder/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-16-botania-endoflame-feeder/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-16-botania-endoflame-feeder/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-16-botania-endoflame-feeder/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep17",
+    "slug": "computercraft-turtle-programs-ep-17-milk-power",
+    "title": "Turtle Programs, Ep 17: Milk Power",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "3HsMLpQBlv4",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Turtle Programs, Ep 17: Milk Power",
+    "videoDescription": "Edit: first nerf reduced the power output, second nerf removed the required recipe (not sure if it's only in Direwolf20 pack or a general thing). Very sad :( \n\nReally had fun with this one, watch the outtakes!\nToday we use living beings to generate free energy, moo ha ha ;) \n\nNo animals were harmed during the making of this movie.\nHope this helps you ... . Enjoy! :)\n\nLinks:\n  Blue pill: http://matrix.wikia.com/wiki/Bluepill (spoilers!)\n  Red pill: http://matrix.wikia.com/wiki/Redpill (spoliers!)\n\nAbout the mods:\nI'm using FTB Presents Direwolf20 1.12 (v1.4.0).\nI added ComputerCraft (v1.80pr1) and OptiFine (1.12.2_HD_U_C7).\nTurtles are part of dan200's mod computercraft, which is about computers, programming and robotics in minecraft: http://www.computercraft.info\nComputercraft uses the programming language LUA: http://www.lua.org/manual/5.2/\n\nMusic:\nPamgaea, by Kevin MacLeod (incompetech.com).\nPrivate Eye, by Kevin MacLeod (incompetech.com).\n\nPastebin:\naMilkPower pastebin code : e8bs7VnN\n\nQuestions and Feedback:\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!",
+    "videoPublishedAt": "2018-01-06T14:49:31Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/3HsMLpQBlv4/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-turtle-programs-ep-17-milk-power/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-17-milk-power/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-17-milk-power/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-turtle-programs-ep-17-milk-power/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep21",
+    "slug": "computercraft-rapid-fire-prank-drone-ep-21-turtle-programs",
+    "title": "Rapid Fire Prank Drone, EP 21 Turtle programs",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "3Xh-LluUf00",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Rapid Fire Prank Drone, EP 21 Turtle programs",
+    "videoDescription": "This time it's prank time :D The program builds either a regular prank drone or a rapid fire drone, that you can start via wireless commands. The rapid fire drone can shoot up 2880 arrows in one go. If you're using TNT, choose your target wisely. Enjoy! :)\n\nTimestamps:\n00:00 Intro and TNT\n01:04 Prank drone\n03:54 Rapid fire drone\n05:43 Refill drone  \n08:00 Fire command\n09:27 Self-experiment\n\nLinks:\nNeed an intro to turtles? https://www.youtube.com/watch?v=ZgbdfJpt7Ks&t=906s\nFalseSymmetry's video: https://www.youtube.com/watch?v=mRi6_zpV-qQ\nReddit source: https://www.reddit.com/r/Minecraft/comments/ld2uu9/so_i_made_a_drone_that_drops_packages_every/\n\npastebin get A35d84ge bDrone\n\n***** Valuable info sources *****\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.2/\n\n***** About ComputerCraft *****\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\n***** About the modpack *****\nI'm using FTB modpack Direwolf20 1.16 (v1.16). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\n***** Questions and Feedback *****\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-03-14T07:24:56Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/3Xh-LluUf00/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-rapid-fire-prank-drone-ep-21-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-rapid-fire-prank-drone-ep-21-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-rapid-fire-prank-drone-ep-21-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-rapid-fire-prank-drone-ep-21-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep22",
+    "slug": "computercraft-loader-the-lord-of-the-pastebin-codes-ep-22-turtle-programs",
+    "title": "Loader - The Lord of the Pastebin Codes, EP 22 Turtle programs",
+    "category": "utilities",
+    "programPaths": [
+      "Kaikaku/tLoader.lua"
+    ],
+    "youtubeVideoId": "lRaTJ7S4zdM",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ComputerCraft: Loader - The Lord of the Pastebin Codes, EP 22 Turtle programs",
+    "videoDescription": "One Pastebin code to rule them all. One Pastebin code to finde them.\nOne Pastebin code to bring them all and on the hard drive bind them.\nThis is the true Pastebin code!\n\nOnly one code to remember and it is (hopefully) easy:\nT = To\nU = YOU\nA = All\nP = Programs\nv = version\n1 = one\nFU = FU**?!\n\nEnjoy! :)\n\nTimestamps:\n00:00 Intro\n01:19 Demo w/ tPlatform\n02:13 Program idea\n03:36 Program details\n09:02 Outro\n\nLinks:\nNeed an intro to turtles? https://www.youtube.com/watch?v=ZgbdfJpt7Ks&t=906s\n\n***** Valuable info sources *****\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.2/\n\n***** About ComputerCraft *****\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\n***** About the modpack *****\nI'm using FTB modpack Direwolf20 1.16 (v1.16). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\n***** Questions and Feedback *****\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribe for more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2021-03-20T19:37:40Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/lRaTJ7S4zdM/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/computercraft-loader-the-lord-of-the-pastebin-codes-ep-22-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/computercraft-loader-the-lord-of-the-pastebin-codes-ep-22-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-loader-the-lord-of-the-pastebin-codes-ep-22-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/computercraft-loader-the-lord-of-the-pastebin-codes-ep-22-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "kaikaku-ep25",
+    "slug": "conputercraft-create-above-beyond-reactor-ep-25-turtle-programs",
+    "title": "ConputerCraft: Create Above & Beyond Reactor, EP 25 Turtle Programs",
+    "category": "utilities",
+    "programPaths": [],
+    "youtubeVideoId": "KWmoZBbW5kk",
+    "youtubePlaylistId": "PLSZY0hnWoKdcIyRcTU2HIod-e6sWKTSMq",
+    "videoTitle": "ConputerCraft: Create Above & Beyond Reactor, EP 25 Turtle Programs",
+    "videoDescription": "Made quickly this new video about a utility program for the awesome modpack Create Above and Beyond. The Computer Craft Turtle program helps you to automate the mass production of quantum entangled singularities of Chapter 3. Sorry for the bad sound quality, haven't planned to do a video and I was in quite a hurry. Anyways, enjoy! :)\n\nTimestamps: WORK IN PROGRESS!\n00:00 Intro\n00:17 Program idea\n01:58 Program demo\n09:03 Outro\n\nLinks:\nNeed an intro to turtles? https://www.youtube.com/watch?v=ZgbdfJpt7Ks&t=906s\n\n***** Valuable info sources *****\nThe ComputerCraft forum: https://forums.computercraft.cc/\nThe CC:Tweaked wiki:  https://tweaked.cc/module/turtle.html\nProgramming language LUA: http://www.lua.org/manual/5.1/\n\n***** About ComputerCraft *****\nCC:Tweaked by SquidDev is the current fork of ComputerCraft. ComputerCraft is originally a mod by dan200, which is about computers, programming and robotics in minecraft.\n\n***** About the modpack *****\nI'm using FTB modpack Direwolf20 1.16 (v1.7.0). You need for this the Java version of Minecraft and FTB App (https://feed-the-beast.com/​).\n\n***** Questions and Feedback *****\nPlease, comment the video and maybe share some of your ideas for future turtle programs. Like and subscribefor more videos.\n\nHope you enjoy, have fun!!\n\n- - - - - - - - - -\n\nMusic:\nPamgaea by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4193-pamgaea\nLicense: https://filmmusic.io/standard-license\n\nSmash (Sketch) by Kevin MacLeod\nLink: https://incompetech.filmmusic.io/song/4377-smash-sketch-\nLicense: https://filmmusic.io/standard-license",
+    "videoPublishedAt": "2022-02-08T20:50:58Z",
+    "videoThumbnailUrl": "https://i.ytimg.com/vi/KWmoZBbW5kk/hqdefault.jpg",
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Kaikaku",
+    "credits": "Kaikaku",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/conputercraft-create-above-beyond-reactor-ep-25-turtle-programs/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/conputercraft-create-above-beyond-reactor-ep-25-turtle-programs/illo1.webp"
+      },
+      {
+        "path": "/programs/images/conputercraft-create-above-beyond-reactor-ep-25-turtle-programs/illo2.webp"
+      },
+      {
+        "path": "/programs/images/conputercraft-create-above-beyond-reactor-ep-25-turtle-programs/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-block-placerlua",
+    "slug": "biggaminggamers-block-placerlua",
+    "title": "block-placer",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/block-placer.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-block-placerlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-block-placerlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-block-placerlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-block-placerlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-client-bomblua",
+    "slug": "biggaminggamers-client-bomblua",
+    "title": "client-bomb",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/client-bomb.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-client-bomblua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-client-bomblua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-client-bomblua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-client-bomblua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-clientlua",
+    "slug": "biggaminggamers-clientlua",
+    "title": "client",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/client.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-clientlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-clientlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-clientlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-clientlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-detectidslua",
+    "slug": "biggaminggamers-detectidslua",
+    "title": "detectids",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/detectids.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-detectidslua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-detectidslua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-detectidslua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-detectidslua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-item-counterlua",
+    "slug": "biggaminggamers-item-counterlua",
+    "title": "item-counter",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/item-counter.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-item-counterlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-item-counterlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-item-counterlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-item-counterlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-lava-refuelerlua",
+    "slug": "biggaminggamers-lava-refuelerlua",
+    "title": "lava-refueler",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/lava-refueler.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-lava-refuelerlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-lava-refuelerlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-lava-refuelerlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-lava-refuelerlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-loadlua",
+    "slug": "biggaminggamers-loadlua",
+    "title": "@load",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/@load.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-loadlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-loadlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-loadlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-phone-app-minelua",
+    "slug": "biggaminggamers-phone-app-minelua",
+    "title": "phone-app-mine",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/phone-app-mine.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-phone-app-minelua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-phone-app-minelua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-app-minelua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-app-minelua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-phone-bombinglua",
+    "slug": "biggaminggamers-phone-bombinglua",
+    "title": "phone-bombing",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/phone-bombing.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-phone-bombinglua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-phone-bombinglua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-bombinglua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-bombinglua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-phone-serverlua",
+    "slug": "biggaminggamers-phone-serverlua",
+    "title": "phone-server",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/phone-server.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-phone-serverlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-phone-serverlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-serverlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-phone-serverlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-ractorlua",
+    "slug": "biggaminggamers-ractorlua",
+    "title": "ractor",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/ractor.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-ractorlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-ractorlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-ractorlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-refuel-testlua",
+    "slug": "biggaminggamers-refuel-testlua",
+    "title": "refuel-test",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/refuel-test.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-refuel-testlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-refuel-testlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-refuel-testlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-refuel-testlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-tnt-deployerlua",
+    "slug": "biggaminggamers-tnt-deployerlua",
+    "title": "tnt-deployer",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/tnt-deployer.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-tnt-deployerlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-tnt-deployerlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-tnt-deployerlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-tnt-deployerlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-tnt-igniterlua",
+    "slug": "biggaminggamers-tnt-igniterlua",
+    "title": "tnt-igniter",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/tnt-igniter.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-tnt-igniterlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-tnt-igniterlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-tnt-igniterlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-tnt-igniterlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-updatebamboolua",
+    "slug": "biggaminggamers-updatebamboolua",
+    "title": "update_bamboo",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/update_bamboo.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-updatebamboolua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-updatebamboolua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatebamboolua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatebamboolua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-updatedispenselua",
+    "slug": "biggaminggamers-updatedispenselua",
+    "title": "update_dispense",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/update_dispense.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-updatedispenselua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-updatedispenselua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatedispenselua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatedispenselua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-updateliftlua",
+    "slug": "biggaminggamers-updateliftlua",
+    "title": "update_lift",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/update_lift.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-updateliftlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-updateliftlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updateliftlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updateliftlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-updatelua",
+    "slug": "biggaminggamers-updatelua",
+    "title": "@update",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/@update.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-updatelua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-updatelua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatelua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updatelua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-biggaminggamers-updateposlua",
+    "slug": "biggaminggamers-updateposlua",
+    "title": "update_pos",
+    "category": "utilities",
+    "programPaths": [
+      "BigGamingGamers/update_pos.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "BigGamingGamers",
+    "credits": "BigGamingGamers",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/biggaminggamers-updateposlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/biggaminggamers-updateposlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updateposlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/biggaminggamers-updateposlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-maengorn-gps-deploylua",
+    "slug": "maengorn-gps-deploylua",
+    "title": "gps-deploy",
+    "category": "utilities",
+    "programPaths": [
+      "Maengorn/gps-deploy.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Maengorn",
+    "credits": "Maengorn",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/maengorn-gps-deploylua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/maengorn-gps-deploylua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-gps-deploylua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-gps-deploylua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-maengorn-mineserverlua",
+    "slug": "maengorn-mineserverlua",
+    "title": "mineserver",
+    "category": "utilities",
+    "programPaths": [
+      "Maengorn/mineserver.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Maengorn",
+    "credits": "Maengorn",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/maengorn-mineserverlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/maengorn-mineserverlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-mineserverlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-mineserverlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-maengorn-phoneserverlua",
+    "slug": "maengorn-phoneserverlua",
+    "title": "phone_server",
+    "category": "utilities",
+    "programPaths": [
+      "Maengorn/phone_server.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Maengorn",
+    "credits": "Maengorn",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/maengorn-phoneserverlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/maengorn-phoneserverlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-phoneserverlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-phoneserverlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-maengorn-startuplua",
+    "slug": "maengorn-startuplua",
+    "title": "startup",
+    "category": "utilities",
+    "programPaths": [
+      "Maengorn/startup.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Maengorn",
+    "credits": "Maengorn",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/maengorn-startuplua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/maengorn-startuplua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-startuplua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/maengorn-startuplua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-merlinlikethewizard-masterminelua",
+    "slug": "merlinlikethewizard-masterminelua",
+    "title": "mastermine",
+    "category": "utilities",
+    "programPaths": [
+      "MerlinLikeTheWizard/mastermine.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "MerlinLikeTheWizard",
+    "credits": "MerlinLikeTheWizard",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/merlinlikethewizard-masterminelua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/merlinlikethewizard-masterminelua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/merlinlikethewizard-masterminelua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/merlinlikethewizard-masterminelua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-merlinlikethewizard-turtlogenesislua",
+    "slug": "merlinlikethewizard-turtlogenesislua",
+    "title": "turtlogenesis",
+    "category": "utilities",
+    "programPaths": [
+      "MerlinLikeTheWizard/turtlogenesis.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "MerlinLikeTheWizard",
+    "credits": "MerlinLikeTheWizard",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/merlinlikethewizard-turtlogenesislua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/merlinlikethewizard-turtlogenesislua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/merlinlikethewizard-turtlogenesislua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/merlinlikethewizard-turtlogenesislua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-michael-reeves808-bamboolua",
+    "slug": "michael-reeves808-bamboolua",
+    "title": "bamboo",
+    "category": "utilities",
+    "programPaths": [
+      "Michael-Reeves808/bamboo.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Michael-Reeves808",
+    "credits": "Michael-Reeves808",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/michael-reeves808-bamboolua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/michael-reeves808-bamboolua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-bamboolua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-bamboolua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-michael-reeves808-liftlua",
+    "slug": "michael-reeves808-liftlua",
+    "title": "lift",
+    "category": "utilities",
+    "programPaths": [
+      "Michael-Reeves808/lift.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Michael-Reeves808",
+    "credits": "Michael-Reeves808",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/michael-reeves808-liftlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/michael-reeves808-liftlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-liftlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-liftlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-michael-reeves808-poslua",
+    "slug": "michael-reeves808-poslua",
+    "title": "pos",
+    "category": "utilities",
+    "programPaths": [
+      "Michael-Reeves808/pos.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Michael-Reeves808",
+    "credits": "Michael-Reeves808",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/michael-reeves808-poslua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/michael-reeves808-poslua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-poslua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/michael-reeves808-poslua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-bigbaeminggamers",
+    "slug": "perlytiara-bigbaeminggamers",
+    "title": "BigBaemingGamers",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/BigBaemingGamers"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-bigbaeminggamers/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-bigbaeminggamers/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-bigbaeminggamers/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-bigbaeminggamers/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-ccommander",
+    "slug": "perlytiara-ccommander",
+    "title": "cCommander",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/cCommander"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-ccommander/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-ccommander/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-ccommander/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-ccommander/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-ehydrawip",
+    "slug": "perlytiara-ehydrawip",
+    "title": "eHydra_wip",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/eHydra_wip"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-ehydrawip/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-ehydrawip/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-ehydrawip/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-ehydrawip/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-entrancecarverlua",
+    "slug": "perlytiara-entrancecarverlua",
+    "title": "entrance_carver",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/entrance_carver.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-entrancecarverlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-entrancecarverlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-entrancecarverlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-entrancecarverlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-gps",
+    "slug": "perlytiara-gps",
+    "title": "gps",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/gps"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-gps/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-gps/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-gps/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-gps/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-husbandry",
+    "slug": "perlytiara-husbandry",
+    "title": "husbandry",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/husbandry"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-husbandry/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-husbandry/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-husbandry/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-husbandry/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-maengorn",
+    "slug": "perlytiara-maengorn",
+    "title": "Maengorn",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/Maengorn"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-maengorn/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-maengorn/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-maengorn/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-maengorn/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-mastermine",
+    "slug": "perlytiara-mastermine",
+    "title": "mastermine",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/mastermine"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-mastermine/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-mastermine/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-mastermine/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-mastermine/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-resetcomputer",
+    "slug": "perlytiara-resetcomputer",
+    "title": "resetComputer",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/resetComputer"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-resetcomputer/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-resetcomputer/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-resetcomputer/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-resetcomputer/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-roomcarverlua",
+    "slug": "perlytiara-roomcarverlua",
+    "title": "room_carver",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/room_carver.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-roomcarverlua/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-roomcarverlua/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-roomcarverlua/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-roomcarverlua/illo3.webp"
+      }
+    ]
+  },
+  {
+    "id": "pac-perlytiara-turtle-manager",
+    "slug": "perlytiara-turtle-manager",
+    "title": "turtle-manager",
+    "category": "utilities",
+    "programPaths": [
+      "perlytiara/turtle-manager"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "perlytiara",
+    "credits": "perlytiara",
+    "metaDescription": null,
+    "summary": null,
+    "imageMainPath": "/programs/images/perlytiara-turtle-manager/main.webp",
+    "imageIllustrations": [
+      {
+        "path": "/programs/images/perlytiara-turtle-manager/illo1.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-turtle-manager/illo2.webp"
+      },
+      {
+        "path": "/programs/images/perlytiara-turtle-manager/illo3.webp"
+      }
+    ]
+  }
+]

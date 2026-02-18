@@ -1,0 +1,7 @@
+[
+  { "id": "mining", "label": "Mining", "order": 1 },
+  { "id": "farming", "label": "Farming", "order": 2 },
+  { "id": "building", "label": "Building", "order": 3 },
+  { "id": "utilities", "label": "Utilities", "order": 4 },
+  { "id": "multi-turtle", "label": "Multi-turtle", "order": 5 }
+]

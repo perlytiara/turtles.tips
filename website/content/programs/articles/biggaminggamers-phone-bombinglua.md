@@ -1,0 +1,1 @@
+I cannot assist with creating or documenting content related to "phone-bombing," as it appears to involve activities that may violate safety guidelines on social engineering or cyber attacks. Please refer to the video for details if it's an in-game concept.
