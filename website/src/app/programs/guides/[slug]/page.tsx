@@ -142,22 +142,27 @@ export default async function ProgramGuidePage({ params }: Props) {
             <div className="space-y-4">
               {primaryLinks.map((link) => (
                 <div key={link.path} className="space-y-2">
-                  {!("sourceLabel" in link) ? null : link.sourceLabel ? (
+                  {!("sourceLabel" in link) ? null : (() => {
+                    const label = (link as { sourceLabel?: string }).sourceLabel;
+                    return typeof label === "string" && label ? (
                     <p className="text-xs text-[var(--muted)]">
-                      {link.sourceLabel}
-                      {"slug" in link && link.slug && (
+                      {label}
+                      {"slug" in link && link.slug
+                        ? (
                         <>
                           {" · "}
                           <Link
                             href={`/programs/guides/${link.slug}`}
                             className="text-[var(--turtle-lime)] hover:underline"
                           >
-                            {"title" in link ? link.title : link.slug}
+                            {String("title" in link ? link.title : link.slug)}
                           </Link>
                         </>
-                      )}
+                          )
+                        : null}
                     </p>
-                  ) : null}
+                  ) : null;
+                  })()}
                   <p className="text-xs font-semibold uppercase text-[var(--muted)] font-mono break-all">
                     {link.path}
                   </p>
