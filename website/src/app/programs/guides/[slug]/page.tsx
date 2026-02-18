@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getProgramsManifest,
-  getArticleBySlug,
+  getArticleBySlugFromManifest,
   getArticleBody,
   getRelatedProgramLinks,
   getSuggestedGuides,
@@ -25,11 +25,11 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 export default async function ProgramGuidePage({ params }: Props) {
   const slug = params.slug;
   if (slug === "_") notFound();
-  const [entry, body, manifest] = await Promise.all([
-    getArticleBySlug(slug),
-    getArticleBody(slug),
+  const [manifest, body] = await Promise.all([
     getProgramsManifest(),
+    getArticleBody(slug),
   ]);
+  const entry = getArticleBySlugFromManifest(manifest, slug);
   if (!entry) notFound();
 
   const rawBase = "/raw/programs";
@@ -39,7 +39,6 @@ export default async function ProgramGuidePage({ params }: Props) {
         href: `/programs/${p.split("/").map(encodeURIComponent).join("/")}`,
         raw: `${rawBase}/${p}`,
         wget: `wget ${siteUrl}${rawBase}/${p}`,
-        curl: `curl -O ${siteUrl}${rawBase}/${p}`,
       }))
     : [];
   const relatedRaw = getRelatedProgramLinks(entry, manifest);
@@ -48,7 +47,6 @@ export default async function ProgramGuidePage({ params }: Props) {
     href: `/programs/${r.path.split("/").map(encodeURIComponent).join("/")}`,
     raw: `${rawBase}/${r.path}`,
     wget: `wget ${siteUrl}${rawBase}/${r.path}`,
-    curl: `curl -O ${siteUrl}${rawBase}/${r.path}`,
     sourceLabel: r.sourceLabel,
     slug: r.slug,
     title: r.title,
@@ -137,7 +135,7 @@ export default async function ProgramGuidePage({ params }: Props) {
                 <>Program files from this episode — copy commands below.</>
               )
             ) : (
-              <>Browse programs to find the file, then use wget/curl below.</>
+              <>Browse programs to find the file, then use wget below.</>
             )}
           </p>
           {primaryLinks.length > 0 ? (
@@ -172,7 +170,6 @@ export default async function ProgramGuidePage({ params }: Props) {
                     </Link>
                   </div>
                   <CopyCommand command={link.wget} />
-                  <CopyCommand command={link.curl} />
                 </div>
               ))}
               {hasDirectPaths && relatedLinks.length > 0 && (
@@ -204,7 +201,6 @@ export default async function ProgramGuidePage({ params }: Props) {
                         </Link>
                       </div>
                       <CopyCommand command={link.wget} />
-                      <CopyCommand command={link.curl} />
                     </div>
                   ))}
                 </>
@@ -216,7 +212,6 @@ export default async function ProgramGuidePage({ params }: Props) {
                 Replace <code className="text-[var(--text)]">&lt;path&gt;</code> with the file path from the browser.
               </p>
               <CopyCommand command={`wget ${siteUrl}${rawBase}/<path>`} />
-              <CopyCommand command={`curl -O ${siteUrl}${rawBase}/<path>`} />
             </>
           )}
         </div>
@@ -312,7 +307,7 @@ export default async function ProgramGuidePage({ params }: Props) {
 
       {suggestedGuides.length > 0 && (
         <section className="rounded-[var(--radius)] border border-[var(--border)] bg-[var(--surface)] p-4 sm:p-5">
-          <details className="group">
+          <details className="group" open>
             <summary className="list-none cursor-pointer py-2 px-2 rounded hover:bg-[var(--surface-hover)] text-sm text-[var(--muted)] hover:text-[var(--text)] flex items-center gap-2">
               <span className="font-semibold uppercase tracking-wider">
                 Suggest others

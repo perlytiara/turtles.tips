@@ -30,6 +30,14 @@ export async function getArticleBySlug(slug: string): Promise<ProgramArticleEntr
   return manifest.find((e) => e.slug === slug) ?? null;
 }
 
+/** Use when you already have the manifest to avoid loading it again. */
+export function getArticleBySlugFromManifest(
+  manifest: ProgramArticleEntry[],
+  slug: string
+): ProgramArticleEntry | null {
+  return manifest.find((e) => e.slug === slug) ?? null;
+}
+
 /** Link info for a program path from a related guide (same episode or same author). */
 export type RelatedProgramLink = {
   path: string;

@@ -50,11 +50,35 @@ async function main() {
   const manifest = JSON.parse(raw) as ProgramArticleEntry[];
 
   const slugArg = process.argv[2];
-  const entries = slugArg
+  const missingOnly = process.argv.includes("--missing-only") && !slugArg;
+  let entries: ProgramArticleEntry[] = slugArg
     ? manifest.filter((e) => e.slug === slugArg)
     : manifest;
 
-  if (entries.length === 0) {
+  if (missingOnly) {
+    const hasImages: string[] = [];
+    try {
+      const slugs = await fs.readdir(ORIG_IMAGES, { withFileTypes: true });
+      for (const s of slugs) {
+        if (!s.isDirectory()) continue;
+        try {
+          await fs.access(path.join(ORIG_IMAGES, s.name, "main.png"));
+          hasImages.push(s.name);
+        } catch {
+          // no main.png
+        }
+      }
+    } catch {
+      // no images dir
+    }
+    const hasSet = new Set(hasImages);
+    entries = entries.filter((e) => !hasSet.has(e.slug));
+    if (entries.length === 0) {
+      console.log("No missing images to generate.");
+      return;
+    }
+    console.log(`Generating images for ${entries.length} missing entries (${hasImages.length} already have images).`);
+  } else if (entries.length === 0) {
     console.log("No entries to process.");
     return;
   }

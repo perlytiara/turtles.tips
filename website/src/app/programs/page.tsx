@@ -4,11 +4,18 @@ import { FileBrowser } from "@/components/FileBrowser";
 import { getProgramsManifest, getProgramsCategories } from "@/lib/programs-content";
 import { ProgramGuidesSection } from "@/components/ProgramGuidesSection";
 
+const LIST_DIR_TIMEOUT_MS = 8000;
+
 export default async function ProgramsPage() {
   const [manifest, categories, entries] = await Promise.all([
     getProgramsManifest(),
     getProgramsCategories(),
-    listDirectory("programs").catch(() => []),
+    Promise.race([
+      listDirectory("programs"),
+      new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error("timeout")), LIST_DIR_TIMEOUT_MS)
+      ),
+    ]).catch(() => [] as Awaited<ReturnType<typeof listDirectory>>),
   ]);
 
   const categoryLabels = Object.fromEntries(
@@ -57,7 +64,7 @@ export default async function ProgramsPage() {
           basePath="/programs"
           rawBase="/raw/programs"
           title="Files"
-          description="Download any file with wget or curl. No GitHub required."
+          description="Download any file with wget. No GitHub required."
         />
       </section>
 

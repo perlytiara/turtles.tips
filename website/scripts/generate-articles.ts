@@ -66,16 +66,35 @@ async function main() {
 
   await fs.mkdir(articlesDir, { recursive: true });
 
-  const toProcess = process.argv[2]
-    ? manifest.filter((e) => e.slug === process.argv[2])
+  const slugArg = process.argv[2];
+  const missingOnly = process.argv.includes("--missing-only") && !slugArg;
+  let toProcess: ProgramArticleEntry[] = slugArg
+    ? manifest.filter((e) => e.slug === slugArg)
     : manifest;
 
-  if (toProcess.length === 0) {
+  if (missingOnly) {
+    const existing: string[] = [];
+    try {
+      const names = await fs.readdir(articlesDir);
+      for (const n of names) {
+        if (n.endsWith(".md")) existing.push(n.replace(/\.md$/, ""));
+      }
+    } catch {
+      // no articles yet
+    }
+    const existingSet = new Set(existing);
+    toProcess = toProcess.filter((e) => !existingSet.has(e.slug));
+    if (toProcess.length === 0) {
+      console.log("No missing articles to generate.");
+      return;
+    }
+    console.log(`Generating ${toProcess.length} missing articles (${existing.length} already exist).`);
+  } else if (toProcess.length === 0) {
     console.log("No entries to process.");
     return;
+  } else {
+    console.log(`Generating articles for ${toProcess.length} entries...`);
   }
-
-  console.log(`Generating articles for ${toProcess.length} entries...`);
 
   for (let i = 0; i < toProcess.length; i++) {
     const entry = toProcess[i];

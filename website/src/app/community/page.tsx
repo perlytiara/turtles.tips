@@ -8,7 +8,7 @@ export default function CommunityPage() {
       <div>
         <h1 className="text-3xl font-bold text-[var(--turtle-lime)] mb-2">Community</h1>
         <p className="text-[var(--muted)]">
-          Community repos — turtles, computers, and peripherals from the community. Browse files directly and download with wget or curl.
+          Community repos — turtles, computers, and peripherals from the community. Browse files directly and download with wget.
         </p>
       </div>
 
@@ -51,7 +51,7 @@ export default function CommunityPage() {
           Download any file directly
         </p>
         <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-          {`wget ${siteUrl}/raw/community/<repo>/<file>\ncurl -O ${siteUrl}/raw/community/<repo>/<file>`}
+          {`wget ${siteUrl}/raw/community/<repo>/<file>`}
         </pre>
       </div>
     </div>

@@ -82,7 +82,7 @@ export default function HomePage() {
         <h2 className="font-semibold text-lg mb-2">How it works</h2>
         <p className="text-[var(--muted)] text-sm sm:text-base mb-4">
           <strong className="text-[var(--text)]">turtles.tips</strong> hosts the full TurtlesPAC archive — programs and community repos.
-          Browse files in the browser or download directly with wget/curl. No GitHub needed.
+          Browse files in the browser or download directly with wget. No GitHub needed.
         </p>
         <div className="space-y-3">
           <div>
@@ -99,14 +99,6 @@ export default function HomePage() {
             </p>
             <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
               wget {siteUrl}/raw/community/starkus-quarry/quarry.lua
-            </pre>
-          </div>
-          <div>
-            <p className="text-xs text-[var(--muted)] mb-1 font-semibold uppercase tracking-wider">
-              Or with curl
-            </p>
-            <pre className="text-xs sm:text-sm bg-black/40 p-3 rounded-lg overflow-x-auto font-mono text-[var(--turtle-lime)]">
-              curl -O {siteUrl}/raw/community/starkus-quarry/quarry.lua
             </pre>
           </div>
         </div>

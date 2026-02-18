@@ -27,7 +27,6 @@ export function FileBrowser({
   description,
 }: FileBrowserProps) {
   const wgetExample = `wget ${siteUrl}${rawBase}/<file>`;
-  const curlExample = `curl -O ${siteUrl}${rawBase}/<file>`;
 
   return (
     <div className="space-y-6">
@@ -45,7 +44,6 @@ export function FileBrowser({
         </p>
         <div className="space-y-2">
           <CopyCommand command={wgetExample} />
-          <CopyCommand command={curlExample} />
         </div>
         <p className="text-xs text-[var(--muted)] mt-3">
           Replace <code className="text-[var(--text)]">&lt;file&gt;</code> with

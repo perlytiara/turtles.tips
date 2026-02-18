@@ -82,7 +82,7 @@ export default async function CommunityBrowsePage({ params }: Props) {
         basePath={subPath ? `${browseBase}/${encodePathForHref(pathSegments)}` : browseBase}
         rawBase={subPath ? `${rawBase}/${subPath}` : rawBase}
         title={repo.name}
-        description={`Community repo by ${repo.source.split("/")[0]} — browse files and download with wget/curl.`}
+        description={`Community repo by ${repo.source.split("/")[0]} — browse files and download with wget.`}
       />
     );
   }

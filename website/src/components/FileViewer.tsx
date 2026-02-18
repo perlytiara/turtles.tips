@@ -31,7 +31,6 @@ export function FileViewer({
   const meta = extractLuaMetadata(content);
   const fullRawUrl = `${siteUrl}${rawUrl}`;
   const wgetCmd = `wget ${fullRawUrl}`;
-  const curlCmd = `curl -O ${fullRawUrl}`;
 
   const [showScrollDown, setShowScrollDown] = useState(false);
   const [codeCopied, setCodeCopied] = useState(false);
@@ -116,7 +115,6 @@ export function FileViewer({
               Copy & run
             </p>
             <CopyCommand command={wgetCmd} />
-            <CopyCommand command={curlCmd} />
           </div>
         </div>
       </div>
