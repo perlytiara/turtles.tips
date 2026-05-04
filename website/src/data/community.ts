@@ -12,4 +12,5 @@ export const communityRepos = [
   { slug: "zephira58-cc-tweaked-scripts", name: "CC-Tweaked-Scripts", source: "Zephira58/CC-Tweaked-Scripts" },
   { slug: "fatboychummy-cc-dog", name: "Dog", source: "Fatboychummy-CC/Dog" },
   { slug: "exa-byte-ccturtle-remote-controller", name: "CCTurtleRemoteController", source: "exa-byte/CCTurtleRemoteController" },
+  { slug: "inksaver-minecraft-toolkit", name: "Minecraft-Toolkit", source: "Inksaver/Minecraft-Toolkit" },
 ] as const;

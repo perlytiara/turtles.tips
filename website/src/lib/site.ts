@@ -1,5 +1,6 @@
-// Local dev: BASE_PATH unset → empty. Production: set by GitHub Actions.
-const siteBasePath = process.env.BASE_PATH ?? "";
+// Local dev: base path unset -> root. Production: set in deploy env.
+const rawBasePath = process.env.NEXT_PUBLIC_BASE_PATH ?? process.env.BASE_PATH ?? "";
+const siteBasePath = rawBasePath === "/" ? "" : rawBasePath.replace(/\/$/, "");
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (siteBasePath ? `https://perlytiara.github.io${siteBasePath}` : "https://turtles.tips");

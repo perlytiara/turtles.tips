@@ -41,6 +41,7 @@ jobs:
         working-directory: website
         env:
           BASE_PATH: /turtles.tips
+          NEXT_PUBLIC_BASE_PATH: /turtles.tips
           NEXT_PUBLIC_SITE_URL: https://perlytiara.github.io/turtles.tips
 
       - name: Upload artifact
