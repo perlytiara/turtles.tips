@@ -13,4 +13,5 @@ export const communityRepos = [
   { slug: "fatboychummy-cc-dog", name: "Dog", source: "Fatboychummy-CC/Dog" },
   { slug: "exa-byte-ccturtle-remote-controller", name: "CCTurtleRemoteController", source: "exa-byte/CCTurtleRemoteController" },
   { slug: "inksaver-minecraft-toolkit", name: "Minecraft-Toolkit", source: "Inksaver/Minecraft-Toolkit" },
+  { slug: "inksaver-computercraft-gui", name: "Computercraft-GUI", source: "Inksaver/Computercraft-GUI" },
 ] as const;

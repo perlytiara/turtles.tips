@@ -2955,5 +2955,29 @@
     "summary": "Collection of CC:Tweaked turtle utility scripts with an in-game updater for fast installs.",
     "imageMainPath": "/programs/images/inksaver-minecraft-toolkit-updaterlua/main.png",
     "imageIllustrations": []
+  },
+  {
+    "id": "pac-inksaver-computercraft-gui-tk3lua",
+    "slug": "inksaver-computercraft-gui-tk3lua",
+    "title": "Computercraft-GUI tk3",
+    "category": "utilities",
+    "programPaths": [
+      "Inksaver/Computercraft-GUI/tk3.lua",
+      "Inksaver/Computercraft-GUI/installer.lua"
+    ],
+    "youtubeVideoId": null,
+    "youtubePlaylistId": null,
+    "videoTitle": null,
+    "videoDescription": null,
+    "videoPublishedAt": null,
+    "videoThumbnailUrl": null,
+    "transcriptPath": null,
+    "pastebinId": null,
+    "author": "Inksaver",
+    "credits": "Inksaver",
+    "metaDescription": "Mouse and keyboard friendly toolkit UI for CC:Tweaked turtles.",
+    "summary": "GUI-driven turtle toolkit with installer flow and reusable scene/lib modules.",
+    "imageMainPath": "/programs/images/inksaver-computercraft-gui-tk3lua/main.png",
+    "imageIllustrations": []
   }
 ]
